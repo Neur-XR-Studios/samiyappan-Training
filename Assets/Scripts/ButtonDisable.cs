@@ -32,7 +32,7 @@ public class ButtonDisable : MonoBehaviour
 
     public void trueHit(bool IsHit)
     {
-        hit = IsHit;
+        hit = IsHit;s
     }
 
 
