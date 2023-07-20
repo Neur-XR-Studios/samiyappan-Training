@@ -16,6 +16,8 @@ public class PlayerPickp : MonoBehaviour
     public GameObject Pickupbutton1;
     public GameObject Ignorebutton2;
     public GameObject DropButton3;
+    public GameObject PointDisable;
+    public GameObject PlayerOne;
 
 
 
@@ -34,6 +36,10 @@ public class PlayerPickp : MonoBehaviour
         Pickupbutton1 = GameObject.Find("PickupT");
         DropButton3 = GameObject.Find("DropT");
         Ignorebutton2 = GameObject.Find("IgnoreT");
+
+
+       /* PointDisable = GameObject.Find("A1 1");
+        PlayerOne = GameObject.Find("People(Clone)");*/
 
 
         spawn = SpawnObj.GetComponent<Spawning>();
@@ -75,7 +81,12 @@ public class PlayerPickp : MonoBehaviour
     }
     private void Update()
     {
-        
+    }
+    public void Droping()
+    {
+
+        PointDisable = GameObject.Find("A1 1");
+        PlayerOne = GameObject.Find("People(Clone)");
     }
 
 
@@ -98,35 +109,67 @@ public class PlayerPickp : MonoBehaviour
 
 
         }
+        else if (other.gameObject.name == "Customer")
+        {
+            Pickupbutton.GetComponent<Button>().enabled = false;
+            DropButton.GetComponent<Button>().enabled = true;
+            Ignorebutton.GetComponent<Button>().enabled = false;
+
+            Pickupbutton.GetComponent<Image>().enabled = false;
+            DropButton.GetComponent<Image>().enabled = true;
+            Ignorebutton.GetComponent<Image>().enabled = false;
+
+            Pickupbutton1.GetComponent<TextMeshProUGUI>().enabled = false;
+            DropButton3.GetComponent<TextMeshProUGUI>().enabled = true;
+            Ignorebutton2.GetComponent<TextMeshProUGUI>().enabled = false;
+        }
 
 
     }
     public void Ignore()
     {
-
-       
+        Droping();
+        Destroy(PlayerOne,5);
         spawn.Spawn();
-        Destroy(gameObject, 10);
+        Pickupbutton.GetComponent<Button>().enabled = false;
+        DropButton.GetComponent<Button>().enabled = false;
+        Ignorebutton.GetComponent<Button>().enabled = false;
 
+        Pickupbutton.GetComponent<Image>().enabled = false;
+        DropButton.GetComponent<Image>().enabled = false;
+        Ignorebutton.GetComponent<Image>().enabled = false;
+
+        Pickupbutton1.GetComponent<TextMeshProUGUI>().enabled = false;
+        DropButton3.GetComponent<TextMeshProUGUI>().enabled = false;
+        Ignorebutton2.GetComponent<TextMeshProUGUI>().enabled = false;
+        this.PointDisable.gameObject.SetActive(false);
+      
+      
 
 
     }
     public void Drop()
     {
-        Pickupbutton.GetComponent<Button>().enabled = true;
+        Droping();
+        Destroy (PlayerOne);      
+
+        Pickupbutton.GetComponent<Button>().enabled = false;
         DropButton.GetComponent<Button>().enabled = false;
-        Ignorebutton.GetComponent<Button>().enabled = true;
+        Ignorebutton.GetComponent<Button>().enabled = false;
 
-        Pickupbutton.GetComponent<Image>().enabled = true;
+        Pickupbutton.GetComponent<Image>().enabled = false;
         DropButton.GetComponent<Image>().enabled = false;
-        Ignorebutton.GetComponent<Image>().enabled = true;
+        Ignorebutton.GetComponent<Image>().enabled = false;
 
-        Pickupbutton1.GetComponent<TextMeshProUGUI>().enabled = true;
+        Pickupbutton1.GetComponent<TextMeshProUGUI>().enabled = false;
         DropButton3.GetComponent<TextMeshProUGUI>().enabled = false;
-        Ignorebutton2.GetComponent<TextMeshProUGUI>().enabled = true;
+        Ignorebutton2.GetComponent<TextMeshProUGUI>().enabled = false;
         spawn.Spawn();
-        Destroy(gameObject);
-      
+
+
+
+
+
 
 
 
@@ -135,6 +178,7 @@ public class PlayerPickp : MonoBehaviour
     }
     public void Pickup()
     {
+        Droping();
 
         Pickupbutton.GetComponent<Button>().enabled = false;
         DropButton.GetComponent<Button>().enabled = true;
@@ -148,8 +192,8 @@ public class PlayerPickp : MonoBehaviour
         DropButton3.GetComponent<TextMeshProUGUI>().enabled = true;
         Ignorebutton2.GetComponent<TextMeshProUGUI>().enabled = false;
         spawn.Spawn();
-        Destroy(gameObject);
-
+        Destroy(PlayerOne);
+        
 
 
 

@@ -12,7 +12,7 @@ public class AcceptIgnore : MonoBehaviour
     public void Update()
     {
 
-        Arrow = GameObject.Find("A1 1(Clone)");
+        Arrow = GameObject.Find("A1 1");
         playerPickp = Arrow.GetComponent<PlayerPickp>();
 
     }

@@ -23,7 +23,7 @@ public class DirectionalArrow : MonoBehaviour
         {
             G1 =GameObject.Find("Arrow");
 
-            target = GameObject.Find("A1 1(Clone)");
+            target = GameObject.Find("A1 1");
             Vector3 targetPos = target.transform.position;
             targetPos.y = transform.position.y;
             transform.LookAt(targetPos);
