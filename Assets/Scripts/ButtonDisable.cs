@@ -23,6 +23,7 @@ public class ButtonDisable : MonoBehaviour
     {
         UpdateDistance();
     }
+
     public void UpdateDistance()
     {
 
@@ -45,10 +46,10 @@ public class ButtonDisable : MonoBehaviour
                 pickupBtn.SetActive(true);
                 Ingnore.SetActive(true);
 
-            
+
 
             }
-            AcceptIgnore.Accept = false;
+         
 
 
         }
