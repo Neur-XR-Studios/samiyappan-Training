@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ButtonDisable : MonoBehaviour
@@ -9,60 +10,47 @@ public class ButtonDisable : MonoBehaviour
     public bool hit;
 
 
-    private void OnTriggerEnter(Collider other)
+
+
+    private void Start()
     {
-        if(other.gameObject.CompareTag(Tagname))
-        {
-            if (hit)
+        pickupBtn.SetActive(false);
+        DropBtn.SetActive(false);
+        Ingnore.SetActive(false);
+    }
+    public void Update()
+    {
+        UpdateDistance();
+    }
+    public void UpdateDistance()
+    {
+
+        if (DistanceCal.DistanceValue > 0 && DistanceCal.DistanceValue < 2)
+        {      
+            if(AcceptIgnore.Accept)
             {
-                pickupBtn.SetActive(true);
-                Ingnore.SetActive(true);
-                DropBtn.SetActive(false);
-                hit = false;
+                
+                DropBtn.SetActive(true);
+
             }
             else
             {
-                pickupBtn.SetActive(false);
-                Ingnore.SetActive(false);
-                DropBtn.SetActive(true);
-                hit = true;
+                pickupBtn.SetActive(true);
+                Ingnore.SetActive(true);
+            
             }
         }
+        else 
+        {
+            pickupBtn.SetActive(false);
+            Ingnore.SetActive(false);
+            DropBtn.SetActive(false);
+        }
+
+
+
+
+
     }
-
-    public void trueHit(bool IsHit)
-    {
-        hit = IsHit;s
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-}//class
+ 
+}

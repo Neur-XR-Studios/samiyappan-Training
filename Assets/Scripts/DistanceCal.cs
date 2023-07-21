@@ -8,7 +8,7 @@ public class DistanceCal : MonoBehaviour
 {
     public GameObject Carpoint;
     public GameObject Endpoint;
-    public float DistanceValue;
+    public  static float DistanceValue;
     public GameObject distanceValue;
     public TMP_Text distanceValueText;
     
@@ -30,4 +30,6 @@ public class DistanceCal : MonoBehaviour
     {
         DistanceValue = Vector3.Distance(Carpoint.transform.position, Endpoint.transform.position);
     }
+
+    
 }

@@ -7,6 +7,9 @@ public class AcceptIgnore : MonoBehaviour
     public PlayerPickp playerPickp;
     public GameObject Arrow;
 
+    public static bool Accept= false;
+    
+
 
 
     public void Update()
@@ -25,10 +28,12 @@ public class AcceptIgnore : MonoBehaviour
     }
     public void Drop1()
     {
+        Accept = false;
         playerPickp.Drop();
     }
     public void pickup() 
     {
+        Accept = true;
         playerPickp.Pickup();
     }
 

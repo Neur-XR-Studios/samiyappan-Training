@@ -19,9 +19,7 @@ public class PlayerPickp : MonoBehaviour
         spawn = SpawnObj.GetComponent<Spawning>();
 
     }
-    private void Update()
-    {
-    }
+ 
     public void Droping()
     {
 

@@ -11,10 +11,7 @@ public class DirectionalArrow : MonoBehaviour
     public bool arrowDetect;
     public GameObject G1;
 
-    public void Start()
-    {
-
-    }
+  
 
     private  void Update()
     {
