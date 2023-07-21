@@ -8,6 +8,7 @@ public class ButtonDisable : MonoBehaviour
     public GameObject pickupBtn, DropBtn, Ingnore;
     public string Tagname;
     public bool hit;
+    public bool Acpet = true;
 
 
 
@@ -26,19 +27,30 @@ public class ButtonDisable : MonoBehaviour
     {
 
         if (DistanceCal.DistanceValue > 0 && DistanceCal.DistanceValue < 2)
-        {      
-            if(AcceptIgnore.Accept)
+        {
+
+
+            if (AcceptIgnore.Accept)
             {
-                
+                pickupBtn.SetActive(false);
+                Ingnore.SetActive(false);
                 DropBtn.SetActive(true);
+              
+               
 
             }
             else
             {
+                DropBtn.SetActive(false);
                 pickupBtn.SetActive(true);
                 Ingnore.SetActive(true);
+
             
+
             }
+            AcceptIgnore.Accept = false;
+
+
         }
         else 
         {
@@ -47,7 +59,7 @@ public class ButtonDisable : MonoBehaviour
             DropBtn.SetActive(false);
         }
 
-
+        
 
 
 
