@@ -44,9 +44,13 @@ public class PlayerPickp : MonoBehaviour
     }*/
     public void Ignore()
     {
-        Droping();
-        Destroy(PlayerOne,5);
         spawn.Spawn();
+        //GetSpawnObj();
+        Droping();
+       
+        //.Destroy(PlayerOne,5);
+        
+      
       
         this.PointDisable.gameObject.SetActive(false);
      
@@ -59,10 +63,26 @@ public class PlayerPickp : MonoBehaviour
     }
     public void Pickup()
     {
-        Droping();
         spawn.Spawn();
+        GetSpawnObj();
+        Droping();      
         Destroy(PlayerOne);
         
+    }
+
+    public void GetSpawnObj()
+    {
+       
+        for (int i = 0; i < SpawnObj.transform.childCount -1; i++)
+        {
+            GameObject child = SpawnObj.transform.GetChild(i).gameObject;
+            Destroy(child);
+            Debug.Log(i);
+        }
+    }
+    public void GetSpawn2()
+    {
+
     }
 
 
