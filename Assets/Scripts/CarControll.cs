@@ -31,16 +31,17 @@ public class CarControll : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _Input();
-        _SteerAngle();
-        Accelerator();
-        WheelPos();
-     
 
     }
     private void Update()
     {
         A1();
+
+        _Input();
+        _SteerAngle();
+        Accelerator();
+        WheelPos();
+
     }
     public void A1()
     {
@@ -62,6 +63,7 @@ public class CarControll : MonoBehaviour
     }
     private void _Input()
     {
+        
         _horizontalInput = Input.GetAxis("Horizontal");
         _verticalInput = Input.GetAxis("Vertical");
     }
@@ -77,6 +79,14 @@ public class CarControll : MonoBehaviour
     {
         front_Wl.motorTorque = _verticalInput * MotorForce;
         front_WR.motorTorque = _verticalInput * MotorForce;
+        if (_verticalInput!=0) 
+        {
+
+            
+            CoinCollections.instance.Fuel();
+        }
+        Debug.Log(_verticalInput);
+       
     }
     private  void WheelPos()
     {
