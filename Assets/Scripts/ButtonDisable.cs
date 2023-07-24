@@ -26,7 +26,6 @@ public class ButtonDisable : MonoBehaviour
 
     public void UpdateDistance()
     {
-
         if (DistanceCal.DistanceValue > 0 && DistanceCal.DistanceValue < 2)
         {
 
@@ -45,11 +44,7 @@ public class ButtonDisable : MonoBehaviour
                 DropBtn.SetActive(false);
                 pickupBtn.SetActive(true);
                 Ingnore.SetActive(true);
-
-
-
-            }
-         
+            }       
 
 
         }
@@ -58,10 +53,7 @@ public class ButtonDisable : MonoBehaviour
             pickupBtn.SetActive(false);
             Ingnore.SetActive(false);
             DropBtn.SetActive(false);
-        }
-
-        
-
+        }    
 
 
     }

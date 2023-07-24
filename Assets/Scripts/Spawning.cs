@@ -16,7 +16,7 @@ public class Spawning : MonoBehaviour
         Spawn();
     }   
     public void Spawn()
-    {     
+    {   
 
             isplayer = true;
 

@@ -8,9 +8,10 @@ using UnityEngine.UI;
 
 public class PlayerPickp : MonoBehaviour
 {
+
     public Spawning spawn;
     public GameObject SpawnObj;
-   
+
     public GameObject PointDisable;
     public GameObject PlayerOne;
     public void Start()
@@ -19,7 +20,7 @@ public class PlayerPickp : MonoBehaviour
         spawn = SpawnObj.GetComponent<Spawning>();
 
     }
- 
+
     public void Droping()
     {
 
@@ -28,69 +29,69 @@ public class PlayerPickp : MonoBehaviour
     }
 
 
-   /* public void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.name == "Customer")
-        {
+    /* public void OnTriggerEnter(Collider other)
+     {
+         if (other.gameObject.name == "Customer")
+         {
 
-            //
-        }
-        else if (other.gameObject.name == "Customer")
-        {
-            //
-        }
+             //
+         }
+         else if (other.gameObject.name == "Customer")
+         {
+             //
+         }
 
 
-    }*/
+     }*/
     public void Ignore()
     {
 
         spawn.Spawn();
         GetSpawnObj2();
-        Droping();       
-    
+        Droping();
+
         this.PointDisable.gameObject.SetActive(false);
-     
+
     }
     public void Drop()
     {
-       
+
         Droping();
-        Destroy (PlayerOne);  
+        Destroy(PlayerOne);
         spawn.Spawn();
-       
+
     }
     public void Pickup()
     {
         spawn.Spawn();
         GetSpawnObj();
-        Droping();      
+        Droping();
         Destroy(PlayerOne);
-        
+
     }
 
     public void GetSpawnObj()
     {
-       
-        for (int i = 0; i < SpawnObj.transform.childCount -1; i++)
+
+        for (int i = 0; i < SpawnObj.transform.childCount - 1; i++)
         {
             GameObject child = SpawnObj.transform.GetChild(i).gameObject;
             Destroy(child);
-            Debug.Log(i);
+            // Debug.Log(i);
         }
     }
 
-    public void GetSpawnObj2()    
+    public void GetSpawnObj2()
     {
 
-        if((SpawnObj.transform.childCount>1 ))
+        if ((SpawnObj.transform.childCount > 1))
         {
 
-            for (int i = 0; i < SpawnObj.transform.childCount -2; i++)
+            for (int i = 0; i < SpawnObj.transform.childCount - 2; i++)
             {
                 GameObject child = SpawnObj.transform.GetChild(i).gameObject;
                 Destroy(child);
-                Debug.Log(i);
+                //Debug.Log(i);
             }
         }
     }
