@@ -9913,8 +9913,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695559811}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7164717, y: 0.314, z: 0.83425236}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.71647173, y: 0.31399998, z: 0.8342524}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11147,17 +11147,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294b9bf55bddc9848b0e79ec4c97b146, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  front_Wl: {fileID: 1710417647}
-  front_WR: {fileID: 1707882917}
-  back_Wl: {fileID: 1710412357}
-  back_WR: {fileID: 1707935709}
-  front_TL: {fileID: 1695850823}
-  front_TR: {fileID: 1695857531}
-  back_TL: {fileID: 1695900247}
-  back_TR: {fileID: 1695939757}
-  MotorForce: 500
-  MaxsteerAngle: 15
-  BreakForce: 1000000
+  FR: {fileID: 1707882917}
+  FL: {fileID: 1710417647}
+  BR: {fileID: 1707935709}
+  BL: {fileID: 1710412357}
+  T_FR: {fileID: 1695857531}
+  T_FL: {fileID: 1695850823}
+  T_BR: {fileID: 1695939757}
+  T_BL: {fileID: 1695900247}
+  acceleration: 1000
+  breakforce: 1200
+  Maxt_Angle: 15
 --- !u!82 &1701774115
 AudioSource:
   m_ObjectHideFlags: 0
