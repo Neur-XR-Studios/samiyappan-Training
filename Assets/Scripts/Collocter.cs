@@ -10,6 +10,8 @@ public class Collocter : MonoBehaviour
         {
 
             Destroy(collision.gameObject);
+         
+
         }
     }
 }
