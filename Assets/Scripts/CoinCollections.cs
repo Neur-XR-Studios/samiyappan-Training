@@ -35,8 +35,24 @@ public class CoinCollections : MonoBehaviour
     }
 
     public void Scoreing()
-    {   
-        Score++;
+    {
+        Score = Score + 1;
+        Scorename.text = Score.ToString();
+    }
+
+    public void PickupMoney()
+    {
+        Score = Score + 10;
+        Scorename.text = Score.ToString();
+    }
+    public void DropMoney() 
+    {
+        Score = Score + 20;
+        Scorename.text = Score.ToString();
+    }
+    public void IngnoreMoney()
+    {
+        Score = Score -10;
         Scorename.text = Score.ToString();
     }
     public void Fuel()

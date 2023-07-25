@@ -351,8 +351,8 @@ MonoBehaviour:
   Scorename: {fileID: 77620974}
   Score: 0
   FuelSlider: {fileID: 407787820}
-  CurrentFuel: 10
-  maxFuel: 10
+  CurrentFuel: 300
+  maxFuel: 300
   UseFuel: 1
   MinValue: 1
 --- !u!1 &80620105
@@ -865,7 +865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -696.61694, y: 471}
+  m_AnchoredPosition: {x: -405, y: 465}
   m_SizeDelta: {x: 74.9219, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &407787820
@@ -913,9 +913,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 731576638}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 300
   m_WholeNumbers: 0
-  m_Value: 10
+  m_Value: 300
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2197,7 +2197,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -273.9, y: 32}
+  m_AnchoredPosition: {x: -136.7, y: 32}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1024661082

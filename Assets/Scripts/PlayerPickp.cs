@@ -14,6 +14,7 @@ public class PlayerPickp : MonoBehaviour
 
     public GameObject PointDisable;
     public GameObject PlayerOne;
+    
     public void Start()
     {
         SpawnObj = GameObject.Find("SpawningObjects");
@@ -26,6 +27,7 @@ public class PlayerPickp : MonoBehaviour
 
         PointDisable = GameObject.Find("A1 1");
         PlayerOne = GameObject.Find("People(Clone)");
+        
     }
 
 
@@ -47,14 +49,18 @@ public class PlayerPickp : MonoBehaviour
     {
 
         spawn.Spawn();
+        CoinCollections.instance.IngnoreMoney();
+       
         GetSpawnObj2();
         Droping();
+
 
         this.PointDisable.gameObject.SetActive(false);
 
     }
     public void Drop()
     {
+        CoinCollections.instance.DropMoney();
 
         Droping();
         Destroy(PlayerOne);
@@ -63,6 +69,7 @@ public class PlayerPickp : MonoBehaviour
     }
     public void Pickup()
     {
+        CoinCollections.instance.PickupMoney();
         spawn.Spawn();
         GetSpawnObj();
         Droping();

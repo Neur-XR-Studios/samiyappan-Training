@@ -343,6 +343,8 @@ MonoBehaviour:
   SpawnObj: {fileID: 0}
   PointDisable: {fileID: 0}
   PlayerOne: {fileID: 0}
+  PlayerTwo: {fileID: 0}
+  PlayerThree: {fileID: 0}
 --- !u!136 &6732039982586644333
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6153,7 +6155,7 @@ GameObject:
   - component: {fileID: 5639886568792551142}
   - component: {fileID: 2158969433195564870}
   m_Layer: 0
-  m_Name: Mesh
+  m_Name: WomenCustomer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
