@@ -20,8 +20,6 @@ public class AcceptIgnore : MonoBehaviour
 
     }
 
-
-
     public void  IGN()
     {
         playerPickp.Ignore();
