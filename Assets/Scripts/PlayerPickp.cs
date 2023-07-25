@@ -14,11 +14,19 @@ public class PlayerPickp : MonoBehaviour
 
     public GameObject PointDisable;
     public GameObject PlayerOne;
+    public GameObject PlayerTwo;
+    public GameObject PlayerThree;
     
     public void Start()
     {
         SpawnObj = GameObject.Find("SpawningObjects");
         spawn = SpawnObj.GetComponent<Spawning>();
+
+    }
+    private void Update()
+    {
+        PlayerTwo = GameObject.Find("Magic circle 2");
+        PlayerThree = GameObject.Find("WomenCustomer");
 
     }
 
@@ -27,32 +35,23 @@ public class PlayerPickp : MonoBehaviour
 
         PointDisable = GameObject.Find("A1 1");
         PlayerOne = GameObject.Find("People(Clone)");
+       
+           
         
     }
 
 
-    /* public void OnTriggerEnter(Collider other)
-     {
-         if (other.gameObject.name == "Customer")
-         {
-
-             //
-         }
-         else if (other.gameObject.name == "Customer")
-         {
-             //
-         }
-
-
-     }*/
     public void Ignore()
     {
-
+        Droping();
         spawn.Spawn();
         CoinCollections.instance.IngnoreMoney();
-       
+        PlayerTwo.gameObject.SetActive(false);
+        PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = true;
+
+
         GetSpawnObj2();
-        Droping();
+       
 
 
         this.PointDisable.gameObject.SetActive(false);
