@@ -45,7 +45,7 @@ public class PlayerPickp : MonoBehaviour
     {
         Droping();
         spawn.Spawn();
-        CoinCollections.instance.IngnoreMoney();
+       // CoinCollections.instance.IngnoreMoney();
         PlayerTwo.gameObject.SetActive(false);
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = true;
 
