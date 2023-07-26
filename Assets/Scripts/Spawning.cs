@@ -13,7 +13,10 @@ public class Spawning : MonoBehaviour
     public DirectionalArrow directionalArrowl;
     public GameObject[] Point1;
     public float[] distanceObject;
+    public float[] distance2;
     int i;
+    int j;
+   
     private void Update()
     {
 
@@ -22,7 +25,7 @@ public class Spawning : MonoBehaviour
 
     void Start()
     {
-        //Spawn();
+        Spawn();
         RandomObjects();
        
     }   
@@ -35,68 +38,35 @@ public class Spawning : MonoBehaviour
         directionalArrowl.DetectArrow();
 
     }
-   
-  
-
-
     public void RandomObjects()
     {
-        
+
         foreach (GameObject obj in Point1)
         {
-            float distance = Vector3.Distance(Point1[0].transform.position, obj.transform.position);
-            distanceObject[i] = distance;
-            i++;    
-            
+           // distanceObject = new float[Point1.Length];
+
            
 
-            
+            float distance = Vector3.Distance(Point1[0].transform.position, obj.transform.position);
+            distanceObject[i] = distance;           
+
+
+            if (distanceObject[i] > 100)
+            {
+              
+                distance2[i] = distanceObject[i];
+                
+
+
+            }
+
+            i++;
+
         }
+
 
 
     }
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-        float Spawndistance = 10f;
-        float Angle_x = Random.Range(-30, 30);
-        float Angle_z = Random.Range(-40, 40);
-
-        float spawnx = gameObject.transform.position.x + Spawndistance + Angle_x;
-        float Spawny = gameObject.transform.position.z + Spawndistance + Angle_z ;
-        GameObject CustomerSpawn = Instantiate(spawning, new Vector3(spawnx, gameObject.transform.position.y, Spawny), Quaternion.identity);*/
