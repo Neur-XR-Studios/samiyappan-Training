@@ -60,7 +60,7 @@ public class PlayerPickp : MonoBehaviour
     public void Drop()
     {
         CoinCollections.instance.DropMoney();
-
+       
         Droping();
         Destroy(PlayerOne);
         spawn.Spawn();
@@ -70,6 +70,7 @@ public class PlayerPickp : MonoBehaviour
     {
         CoinCollections.instance.PickupMoney();
         spawn.Spawn();
+        PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
         GetSpawnObj();
         Droping();
         Destroy(PlayerOne);

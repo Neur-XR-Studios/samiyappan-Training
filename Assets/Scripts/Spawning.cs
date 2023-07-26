@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Spawning : MonoBehaviour
 {
@@ -10,8 +12,8 @@ public class Spawning : MonoBehaviour
     public bool isplayer = false;
     public DirectionalArrow directionalArrowl;
     public GameObject[] Point1;
-
-
+    public float[] distanceObject;
+    int i;
     private void Update()
     {
 
@@ -20,8 +22,9 @@ public class Spawning : MonoBehaviour
 
     void Start()
     {
-        Spawn();
+        //Spawn();
         RandomObjects();
+       
     }   
     public void Spawn()
     {
@@ -38,42 +41,20 @@ public class Spawning : MonoBehaviour
 
     public void RandomObjects()
     {
+        
         foreach (GameObject obj in Point1)
         {
+            float distance = Vector3.Distance(Point1[0].transform.position, obj.transform.position);
+            distanceObject[i] = distance;
+            i++;    
+            
            
 
-          
             
-        }   
-    
-        
+        }
+
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
