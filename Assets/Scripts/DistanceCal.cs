@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.Mathematics;
+using System;
 
 public class DistanceCal : MonoBehaviour
 {
     public GameObject Carpoint;
     public GameObject Endpoint;
-    public  static float DistanceValue;
+    public  static float  DistanceValue;
+ 
     public GameObject distanceValue;
     public TMP_Text distanceValueText;
     
@@ -20,15 +23,22 @@ public class DistanceCal : MonoBehaviour
         Carpoint = GameObject.Find("Customer");      
         distanceValue = GameObject.Find("Distance");
         distanceValueText = distanceValue.GetComponent<TMP_Text>();
+      
     }   
     void Update()
-    {       
+    {
+
+
+       int roundedValue = Mathf.RoundToInt(DistanceValue);
+
+       /* Debug.Log(roundedValue);
+        Debug.Log(DistanceValue);*/
         DistanceCalculation();
-        distanceValueText.text = DistanceValue.ToString();
+        distanceValueText.text = roundedValue.ToString();
     }
     void DistanceCalculation()
     {
-
+       
         DistanceValue = Vector3.Distance(Carpoint.transform.position, Endpoint.transform.position);
     }
 

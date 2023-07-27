@@ -4,6 +4,8 @@ using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
+using System.Linq;
+
 
 public class Spawning : MonoBehaviour
 {
@@ -16,7 +18,7 @@ public class Spawning : MonoBehaviour
     public float[] distance2;
     int i;
     int j;
-   
+
     private void Update()
     {
 
@@ -27,8 +29,8 @@ public class Spawning : MonoBehaviour
     {
         Spawn();
         RandomObjects();
-       
-    }   
+
+    }
     public void Spawn()
     {
         isplayer = true;
@@ -43,26 +45,40 @@ public class Spawning : MonoBehaviour
 
         foreach (GameObject obj in Point1)
         {
-           // distanceObject = new float[Point1.Length];
+            //distanceObject = new float[obj.Length];
+          
 
-           
+
+
 
             float distance = Vector3.Distance(Point1[0].transform.position, obj.transform.position);
-            distanceObject[i] = distance;           
+            distanceObject[i] = distance;
+
 
 
             if (distanceObject[i] > 100)
             {
-              
+
                 distance2[i] = distanceObject[i];
-                
 
 
             }
+        
+
 
             i++;
 
         }
+        if (distance2.Length > 0)
+        {
+            int indexArrayDistance2 = Random.Range(0, distance2.Length);
+            float distanceArrayDistance2 = distance2[indexArrayDistance2];
+            Debug.Log("take elemrnt distance" + distanceArrayDistance2);
+            Debug.Log(" array Elemrnt " + indexArrayDistance2);
+
+
+        }
+
 
 
 
