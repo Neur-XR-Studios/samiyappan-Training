@@ -16,9 +16,13 @@ public class Spawning : MonoBehaviour
     public GameObject[] Point1;
     public float[] distanceObject;
     public float[] distance2;
-    int i;
-    int j;
+    public float[] distanceWithNozero ;
+     
 
+    int i=0;
+    int j=0;
+    int k=0;
+  
     private void Update()
     {
 
@@ -42,42 +46,43 @@ public class Spawning : MonoBehaviour
     }
     public void RandomObjects()
     {
+        distanceObject = new float[Point1.Length];
+        distance2 = new float[Point1.Length];
 
         foreach (GameObject obj in Point1)
         {
-            //distanceObject = new float[obj.Length];
-          
-
-
-
 
             float distance = Vector3.Distance(Point1[0].transform.position, obj.transform.position);
             distanceObject[i] = distance;
 
-
-
-            if (distanceObject[i] > 100)
+            if (distanceObject[i] > 150f)
             {
 
-                distance2[i] = distanceObject[i];
-
+                distance2[j] = distanceObject[i];
+                j++;
 
             }
-        
+            //if not take zero , put a if condition eg: distance2 > zero then  distanceWithNozero
+            // print random number using distanceWithNozero array
+            // then print random number
 
+
+            if (distance2[j] > 0)
+            {
+
+                distanceWithNozero[k] = distance2[j];
+                k++;
+
+            }
 
             i++;
 
-        }
-        if (distance2.Length > 0)
-        {
-            int indexArrayDistance2 = Random.Range(0, distance2.Length);
-            float distanceArrayDistance2 = distance2[indexArrayDistance2];
-            Debug.Log("take elemrnt distance" + distanceArrayDistance2);
-            Debug.Log(" array Elemrnt " + indexArrayDistance2);
 
+       
+            
 
         }
+
 
 
 
