@@ -1209,6 +1209,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  distanceWithNozero: []
 --- !u!4 &377998698
 Transform:
   m_ObjectHideFlags: 0
