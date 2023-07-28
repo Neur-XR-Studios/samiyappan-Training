@@ -16,25 +16,19 @@ public class Spawning : MonoBehaviour
     public GameObject[] Point1;
     public float[] distanceObject;
     public float[] distance2;
-    public float[] distanceWithNozero ;
-     
+    public List<float> distanceList;
 
-    int i=0;
-    int j=0;
-    int k=0;
-  
-    private void Update()
-    {
 
-    }
-
+    int i = 0;
+    int j = 0;
 
     void Start()
     {
         Spawn();
         RandomObjects();
-
     }
+
+
     public void Spawn()
     {
         isplayer = true;
@@ -42,8 +36,10 @@ public class Spawning : MonoBehaviour
         GameObject CustomerSpawn = Instantiate(spawning, new Vector3(Random.Range(-30, 30), gameObject.transform.position.y, Random.Range(-40, 40)), Quaternion.identity);
         CustomerSpawn.transform.parent = transform;
         directionalArrowl.DetectArrow();
-
     }
+
+
+
     public void RandomObjects()
     {
         distanceObject = new float[Point1.Length];
@@ -51,43 +47,25 @@ public class Spawning : MonoBehaviour
 
         foreach (GameObject obj in Point1)
         {
-
             float distance = Vector3.Distance(Point1[0].transform.position, obj.transform.position);
             distanceObject[i] = distance;
 
             if (distanceObject[i] > 150f)
             {
-
                 distance2[j] = distanceObject[i];
+                distanceList.Add(distance2[j]);
                 j++;
 
-            }
-            //if not take zero , put a if condition eg: distance2 > zero then  distanceWithNozero
-            // print random number using distanceWithNozero array
-            // then print random number
+                Debug.Log(obj);
+
+              
+            } 
 
 
-            if (distance2[j] > 0)
-            {
-
-                distanceWithNozero[k] = distance2[j];
-                k++;
-
-            }
-
+                //if not take zero , put a if condition eg: distance2 > zero then  distanceWithNozero
+                // print random number using distanceWithNozero array
+                // then print random number 
             i++;
-
-
-       
-            
-
         }
-
-
-
-
-
     }
 }
-
-
