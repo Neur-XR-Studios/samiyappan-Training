@@ -53,7 +53,7 @@ public class Spawning : MonoBehaviour
             if (distanceObject[i] > 150f)
             {
                 distance2[j] = distanceObject[i];
-                distanceList.Add(distance2[j]);
+                distanceList.Add(distance2[j]);                
                 j++;
 
 
@@ -68,12 +68,14 @@ public class Spawning : MonoBehaviour
                 int randomindex = Random.Range(0, distanceList.Count);
                 GameObject randomObject = Point1[randomindex];
                 Vector3 randomposition = randomObject.transform.position;
+
                 Debug.Log("Distance " + obj.name + " random" + randomposition);
                 GameObject spawnedObject = Instantiate(spawning, randomObject.transform.position, Quaternion.identity);
                 spawnedObject.transform.parent = transform;
                 directionalArrowl.DetectArrow();
-
+                break;
             }
+
 
 
             //if not take zero , put a if condition eg: distance2 > zero then  distanceWithNozero
