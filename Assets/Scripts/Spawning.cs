@@ -61,6 +61,7 @@ public class Spawning : MonoBehaviour
 
 
             }
+
             if (distanceObject[i] > 150f)
                // if (distanceList.Count > 0)
             {
@@ -73,7 +74,7 @@ public class Spawning : MonoBehaviour
                 GameObject spawnedObject = Instantiate(spawning, randomObject.transform.position, Quaternion.identity);
                 spawnedObject.transform.parent = transform;
                 directionalArrowl.DetectArrow();
-                break;
+                //break;
             }
 
 
