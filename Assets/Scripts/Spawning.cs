@@ -32,10 +32,10 @@ public class Spawning : MonoBehaviour
     public void Spawn()
     {
         isplayer = true;
-
+/*
         GameObject CustomerSpawn = Instantiate(spawning, new Vector3(Random.Range(-30, 30), gameObject.transform.position.y, Random.Range(-40, 40)), Quaternion.identity);
         CustomerSpawn.transform.parent = transform;
-        directionalArrowl.DetectArrow();
+        directionalArrowl.DetectArrow();*/
     }
 
 
@@ -69,9 +69,9 @@ public class Spawning : MonoBehaviour
                 GameObject randomObject = Point1[randomindex];
                 Vector3 randomposition = randomObject.transform.position;
                 Debug.Log("Distance " + obj.name + " random" + randomposition);
-               /* GameObject spawnedObject = Instantiate(spawning, randomObject.transform.position, Quaternion.identity);
+                GameObject spawnedObject = Instantiate(spawning, randomObject.transform.position, Quaternion.identity);
                 spawnedObject.transform.parent = transform;
-                directionalArrowl.DetectArrow();*/
+                directionalArrowl.DetectArrow();
 
             }
 
