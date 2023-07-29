@@ -69,7 +69,7 @@ public class Spawning : MonoBehaviour
                 GameObject randomObject = Point1[randomindex];
                 Vector3 randomposition = randomObject.transform.position;
 
-               // Debug.Log("Distance " + obj.name + " random" + randomposition);
+                Debug.Log("Distance " + obj.name + " random" + randomposition);
                 GameObject spawnedObject = Instantiate(spawning, randomObject.transform.position, Quaternion.identity);
                 spawnedObject.transform.parent = transform;
                 directionalArrowl.DetectArrow();
@@ -84,6 +84,7 @@ public class Spawning : MonoBehaviour
 
 
             i++;
+           
         }
     }
 }

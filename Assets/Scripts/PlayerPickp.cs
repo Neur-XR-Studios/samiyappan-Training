@@ -62,7 +62,8 @@ public class PlayerPickp : MonoBehaviour
     public void Drop()
     {
         CoinCollections.instance.DropMoney();
-       
+        PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
+
         Droping();
         Destroy(PlayerOne);
         spawn.RandomObjects();
