@@ -24,7 +24,7 @@ public class Spawning : MonoBehaviour
 
     void Start()
     {
-        Spawn();
+        //Spawn();
         RandomObjects();
     }
 
@@ -56,15 +56,31 @@ public class Spawning : MonoBehaviour
                 distanceList.Add(distance2[j]);
                 j++;
 
-                Debug.Log(obj);
 
-              
-            } 
+                // Debug.Log(obj);
 
 
-                //if not take zero , put a if condition eg: distance2 > zero then  distanceWithNozero
-                // print random number using distanceWithNozero array
-                // then print random number 
+            }
+            if (distanceObject[i] > 150f)
+               // if (distanceList.Count > 0)
+            {
+
+                int randomindex = Random.Range(0, distanceList.Count);
+                GameObject randomObject = Point1[randomindex];
+                Vector3 randomposition = randomObject.transform.position;
+                Debug.Log("Distance " + obj.name + " random" + randomposition);
+               /* GameObject spawnedObject = Instantiate(spawning, randomObject.transform.position, Quaternion.identity);
+                spawnedObject.transform.parent = transform;
+                directionalArrowl.DetectArrow();*/
+
+            }
+
+
+            //if not take zero , put a if condition eg: distance2 > zero then  distanceWithNozero
+            // print random number using distanceWithNozero array
+            // then print random number 
+
+
             i++;
         }
     }

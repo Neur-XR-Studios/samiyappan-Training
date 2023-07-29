@@ -43,8 +43,10 @@ public class PlayerPickp : MonoBehaviour
 
     public void Ignore()
     {
+
         Droping();
         spawn.Spawn();
+        spawn.RandomObjects();
        // CoinCollections.instance.IngnoreMoney();
         PlayerTwo.gameObject.SetActive(false);
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = true;
@@ -63,12 +65,16 @@ public class PlayerPickp : MonoBehaviour
        
         Droping();
         Destroy(PlayerOne);
+        spawn.RandomObjects();
+
         spawn.Spawn();
 
     }
     public void Pickup()
     {
         CoinCollections.instance.PickupMoney();
+        spawn.RandomObjects();
+
         spawn.Spawn();
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
         GetSpawnObj();
