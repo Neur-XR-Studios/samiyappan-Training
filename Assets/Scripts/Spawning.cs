@@ -45,7 +45,9 @@ public class Spawning : MonoBehaviour
 
     public void RandomObjects()
     {
-
+        i = 0;
+        Array.Clear(distanceObject,0, distanceObject.Length);
+        Array.Clear(distance2,0, distance2.Length);
 
         //distanceObject = new float[Point1.Length];
         //distance2 = new float[Point1.Length];
@@ -76,7 +78,7 @@ public class Spawning : MonoBehaviour
             
         }
 
-        int traveller = Random.Range(0, 50);
+        int traveller = Random.Range(0, Point1.Length);
         GameObject randomPerson = Point1[traveller];
         Vector3 randompositionofAPerson = randomPerson.transform.position;
         GameObject spawnedperson = Instantiate(spawning, randomPerson.transform.position, Quaternion.identity);
@@ -88,7 +90,7 @@ public class Spawning : MonoBehaviour
      public  void ClearArray()
     {
       
-        Array.Clear(distanceObject, 0, distanceObject.Length);
+       // Array.Clear(distanceObject, 0, distanceObject.Length);
     }
 
 
