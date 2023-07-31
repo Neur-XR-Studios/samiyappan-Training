@@ -14,7 +14,7 @@ public class AcceptIgnore : MonoBehaviour
 
     public void Update()
     {
-        U1();
+      U1();
 
 
     }

@@ -1210,6 +1210,7 @@ MonoBehaviour:
   - 0
   - 0
   distanceList: []
+  RandoRangePeople: []
 --- !u!4 &377998698
 Transform:
   m_ObjectHideFlags: 0

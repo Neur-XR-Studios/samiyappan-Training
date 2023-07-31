@@ -5,6 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 using System.Linq;
+using System;
+using Random = UnityEngine.Random;
 
 
 public class Spawning : MonoBehaviour
@@ -15,8 +17,9 @@ public class Spawning : MonoBehaviour
     public DirectionalArrow directionalArrowl;
     public GameObject[] Point1;
     public float[] distanceObject;
-    public float[] distance2;
+    public float[] distance2;   
     public List<float> distanceList;
+    public List<float> RandoRangePeople;
 
 
     int i = 0;
@@ -42,50 +45,51 @@ public class Spawning : MonoBehaviour
 
     public void RandomObjects()
     {
-        distanceObject = new float[Point1.Length];
-        distance2 = new float[Point1.Length];
+
+
+        //distanceObject = new float[Point1.Length];
+        //distance2 = new float[Point1.Length];
+     
+       
+       // distanceObject.AddRange(new List<float>());
+      //  distance2 .AddRange(new List<float>());
 
         foreach (GameObject obj in Point1)
         {
-            float distance = Vector3.Distance(Point1[0].transform.position, obj.transform.position);
+            
+            float distance = Vector3.Distance(Point1[0].transform.position, obj.transform.position);            
             distanceObject[i] = distance;
 
+          //  Debug.Log(distanceObject[i]);
+
             if (distanceObject[i] > 150f)
             {
-                distance2[j] = distanceObject[i];
+                distance2[j] = distanceObject[i]; 
                 distanceList.Add(distance2[j]);                
                 j++;
-
-
                 // Debug.Log(obj);
-
-
             }
-
-            if (distanceObject[i] > 150f)
-               // if (distanceList.Count > 0)
-            {
-
-                int randomindex = Random.Range(0, distanceList.Count);
-                GameObject randomObject = Point1[randomindex];
-                Vector3 randomposition = randomObject.transform.position;
-
-                Debug.Log("Distance " + obj.name + " random" + randomposition);
-                GameObject spawnedObject = Instantiate(spawning, randomObject.transform.position, Quaternion.identity);
-                spawnedObject.transform.parent = transform;
-                directionalArrowl.DetectArrow();
-                //break;
-            }
-
-
-
-            //if not take zero , put a if condition eg: distance2 > zero then  distanceWithNozero
-            // print random number using distanceWithNozero array
-            // then print random number 
+            //if not take zero , put a if condition eg: distance2 > zero then  distanceWithNozero// print random number using distanceWithNozero array // then print random number 
 
 
             i++;
-           
+            
         }
+
+        int traveller = Random.Range(0, 50);
+        GameObject randomPerson = Point1[traveller];
+        Vector3 randompositionofAPerson = randomPerson.transform.position;
+        GameObject spawnedperson = Instantiate(spawning, randomPerson.transform.position, Quaternion.identity);
+        spawnedperson.transform.parent = transform;
+        directionalArrowl.DetectArrow();
+        Debug.Log("Distance " + " random" + randompositionofAPerson);
+
     }
+     public  void ClearArray()
+    {
+      
+        Array.Clear(distanceObject, 0, distanceObject.Length);
+    }
+
+
 }

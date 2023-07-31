@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
@@ -43,44 +44,44 @@ public class PlayerPickp : MonoBehaviour
 
     public void Ignore()
     {
-
-        Droping();
-        spawn.Spawn();
+        spawn.ClearArray();
         spawn.RandomObjects();
-       // CoinCollections.instance.IngnoreMoney();
+        
+        Droping();
+    
+       
         PlayerTwo.gameObject.SetActive(false);
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = true;
-
-
         GetSpawnObj2();
-       
-
-
         this.PointDisable.gameObject.SetActive(false);
+        // spawn.Spawn();
+        // CoinCollections.instance.IngnoreMoney();
+
 
     }
     public void Drop()
     {
+        spawn.ClearArray();
         CoinCollections.instance.DropMoney();
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
-
         Droping();
         Destroy(PlayerOne);
         spawn.RandomObjects();
 
-        spawn.Spawn();
+        //spawn.Spawn();
 
     }
     public void Pickup()
     {
+        spawn.ClearArray();
+        // spawn.Clearing();
         CoinCollections.instance.PickupMoney();
+        Destroy(PlayerOne);
         spawn.RandomObjects();
-
-        spawn.Spawn();
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
         GetSpawnObj();
         Droping();
-        Destroy(PlayerOne);
+        // spawn.Spawn();
 
     }
 
