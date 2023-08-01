@@ -9,7 +9,9 @@ public class CoinCollections : MonoBehaviour
 {
     public static CoinCollections instance;
     public TMP_Text Scorename;
-    public int Score = 0;  
+    public TMP_Text CarSpeed;
+    public int Score = 0;
+    public int CarSpeedvalue = 0;
     
     public Slider FuelSlider;
 
@@ -60,6 +62,38 @@ public class CoinCollections : MonoBehaviour
     public void Refill()
     {
         CurrentFuel = maxFuel;
+    }
+
+    public void CarSpeedIncrease()
+    {
+        CarSpeedvalue++;
+
+    }
+    public void CarSpeedDecrease()
+    {
+        CarSpeedvalue--;
+    }
+    
+
+    public void CarSpeeds()
+    {
+        if(Input.GetKey(KeyCode.UpArrow))
+        {
+            CarSpeedvalue = CarSpeedvalue + 1;
+            CarSpeed.text = CarSpeedvalue.ToString();
+
+        }
+       else
+        {
+            if(CarSpeedvalue > 0) 
+            {
+                CarSpeedvalue = CarSpeedvalue - 1;
+                CarSpeed.text = CarSpeedvalue.ToString();
+            }
+           
+
+        }
+
     }
 
 }

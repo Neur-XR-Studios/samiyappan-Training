@@ -29,8 +29,10 @@ public class CarControll : MonoBehaviour
     public void FixedUpdate()
     {
         Currentacceleration = acceleration * Input.GetAxis("Vertical");
+        CoinCollections.instance.CarSpeeds();
         if (Currentacceleration != 0)
         {
+          
             CoinCollections.instance.Fuel();
         }
 
@@ -52,6 +54,9 @@ public class CarControll : MonoBehaviour
         BackL.brakeTorque = Currentbreakforce;
 
         Currentmaxt_Angle = Maxt_Angle * Input.GetAxis("Horizontal");
+        {
+           
+        }
 
         FrontR.steerAngle = Currentmaxt_Angle;
         FrontL.steerAngle = Currentmaxt_Angle;
