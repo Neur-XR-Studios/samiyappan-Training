@@ -8,17 +8,15 @@ using UnityEngine.UI;
 public class CoinCollections : MonoBehaviour
 {
     public static CoinCollections instance;
-    public TMP_Text Scorename;
-    public TMP_Text CarSpeed;
-    public int Score = 0;
-    public int CarSpeedvalue = 0;
-    
+    public TMP_Text Scorename;   
+    public int Score = 0;  
     public Slider FuelSlider;
-
     public float CurrentFuel = 10f;
     public float maxFuel = 10f;
     public float UseFuel = 1f;
     public float MinValue = 1f;
+
+
     private void Start()
     {
         if (instance == null)
@@ -64,36 +62,9 @@ public class CoinCollections : MonoBehaviour
         CurrentFuel = maxFuel;
     }
 
-    public void CarSpeedIncrease()
-    {
-        CarSpeedvalue++;
-
-    }
-    public void CarSpeedDecrease()
-    {
-        CarSpeedvalue--;
-    }
+  
     
 
-    public void CarSpeeds()
-    {
-        if(Input.GetKey(KeyCode.UpArrow))
-        {
-            CarSpeedvalue = CarSpeedvalue + 1;
-            CarSpeed.text = CarSpeedvalue.ToString();
-
-        }
-       else
-        {
-            if(CarSpeedvalue > 0) 
-            {
-                CarSpeedvalue = CarSpeedvalue - 1;
-                CarSpeed.text = CarSpeedvalue.ToString();
-            }
-           
-
-        }
-
-    }
+   
 
 }

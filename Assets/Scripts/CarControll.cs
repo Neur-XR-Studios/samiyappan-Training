@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
@@ -26,10 +28,55 @@ public class CarControll : MonoBehaviour
     private float Currentbreakforce = 0f;
     private float Currentmaxt_Angle = 0f;
 
+    public TMP_Text CarSpeed;
+    public float CarSpeedvalue = 0;
+    int CarSpeedmax = 0;
+
+    public GameObject siren;
+    public AudioSource CarSpeedaudio;
+
     public void FixedUpdate()
     {
         Currentacceleration = acceleration * Input.GetAxis("Vertical");
-        CoinCollections.instance.CarSpeeds();
+
+        if ((Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.DownArrow)))
+        {
+            CarSpeedvalue = CarSpeedvalue +(5*Time.deltaTime);
+            CarSpeedmax = (int)(CarSpeedvalue);
+            CarSpeed.text = CarSpeedmax.ToString();
+            if (CarSpeedvalue >= 60)
+            {
+                
+                CarSpeedaudio.Play();
+            }
+            else
+            {
+                
+                CarSpeedaudio.Stop();
+                Debug.Log(" no sound");
+            }
+
+
+        }
+      
+        else
+        {
+            if (CarSpeedvalue > 0)
+            {
+                CarSpeedvalue = CarSpeedvalue - (5 * Time.deltaTime);
+
+                CarSpeedmax = (int)(CarSpeedvalue);
+                CarSpeed.text = CarSpeedmax.ToString();
+                
+            }
+            else if (CarSpeedvalue > 80)
+            {
+
+            }
+
+
+        }
+
         if (Currentacceleration != 0)
         {
           
@@ -78,4 +125,5 @@ public class CarControll : MonoBehaviour
         transform.position = position;
         transform.rotation = rotation;
     }
+   
 }
