@@ -2723,7 +2723,7 @@ GameObject:
   - component: {fileID: 880666115}
   - component: {fileID: 880666114}
   m_Layer: 5
-  m_Name: Coins
+  m_Name: CarSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

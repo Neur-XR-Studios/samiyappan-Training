@@ -54,15 +54,16 @@ public class Spawning : MonoBehaviour
     {
         i = 0;
         j = 0;
+        
 
         Array.Clear(distanceObject,0, distanceObject.Length);
         Array.Clear(distance2,0, distance2.Length);
-         
-         //distanceObject = new float[Point1.Length];
+
+        //distanceObject = new float[Point1.Length];
         //distance2 = new float[Point1.Length];
         //distanceObject.AddRange(new List<float>());
         //distance2 .AddRange(new List<float>());
-
+       // RandomObjectdistanceList();
         foreach (GameObject obj in Point1)
         {
             
@@ -94,6 +95,15 @@ public class Spawning : MonoBehaviour
 
         
 
+    }
+
+    public void RandomObjectdistanceList()
+    {
+     
+        for(int k = 0; k < distanceList.Count; k++) 
+        {
+            distanceList[k] = 0;
+        }   
     }
 
     public void DisableMesh()
