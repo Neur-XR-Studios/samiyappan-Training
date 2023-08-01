@@ -51,22 +51,17 @@ public class CarControll : MonoBehaviour
         BackR.brakeTorque = Currentbreakforce;
         BackL.brakeTorque = Currentbreakforce;
 
-
         Currentmaxt_Angle = Maxt_Angle * Input.GetAxis("Horizontal");
 
         FrontR.steerAngle = Currentmaxt_Angle;
         FrontL.steerAngle = Currentmaxt_Angle;
-
 
         Wheelpos(FrontR, T_FrontR);
         Wheelpos(BackL, T_BackL);
         Wheelpos(FrontL, T_FrontL);
         Wheelpos(BackR, T_BackR);
 
-
     }
-
-
     void Wheelpos(WheelCollider col ,Transform transform)
     {
         Vector3 position;
@@ -78,6 +73,4 @@ public class CarControll : MonoBehaviour
         transform.position = position;
         transform.rotation = rotation;
     }
-
 }
- 

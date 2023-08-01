@@ -17,7 +17,6 @@ public class PlayerPickp : MonoBehaviour
     public GameObject PlayerOne;
     public GameObject PlayerTwo;
     public GameObject PlayerThree;
-    
     public void Start()
     {
         SpawnObj = GameObject.Find("SpawningObjects");
@@ -28,63 +27,43 @@ public class PlayerPickp : MonoBehaviour
     {
         PlayerTwo = GameObject.Find("Magic circle 2");
         PlayerThree = GameObject.Find("WomenCustomer");
-
     }
-
     public void Droping()
     {
-
         PointDisable = GameObject.Find("A1 1");
         PlayerOne = GameObject.Find("People(Clone)");
        
-           
-        
     }
-
-
     public void Ignore()
     {
-        spawn.ClearArray();
         spawn.RandomObjects();
-        
         Droping();
-    
-       
         PlayerTwo.gameObject.SetActive(false);
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = true;
         GetSpawnObj2();
         this.PointDisable.gameObject.SetActive(false);
-        // spawn.Spawn();
-        // CoinCollections.instance.IngnoreMoney();
-
-
     }
     public void Drop()
     {
-        spawn.ClearArray();
         CoinCollections.instance.DropMoney();
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
         Droping();
         Destroy(PlayerOne);
         spawn.RandomObjects();
-
-        //spawn.Spawn();
-
+        
     }
     public void Pickup()
     {
-        spawn.ClearArray();
-        // spawn.Clearing();
         CoinCollections.instance.PickupMoney();
         Destroy(PlayerOne);
         spawn.RandomObjects();
+        spawn.DisableMesh();
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
+
+
         GetSpawnObj();
         Droping();
-        // spawn.Spawn();
-
     }
-
     public void GetSpawnObj()
     {
 
@@ -95,13 +74,10 @@ public class PlayerPickp : MonoBehaviour
             // Debug.Log(i);
         }
     }
-
     public void GetSpawnObj2()
     {
-
         if ((SpawnObj.transform.childCount > 1))
         {
-
             for (int i = 0; i < SpawnObj.transform.childCount - 2; i++)
             {
                 GameObject child = SpawnObj.transform.GetChild(i).gameObject;
@@ -111,6 +87,5 @@ public class PlayerPickp : MonoBehaviour
         }
     }
 
-
-
+   
 }

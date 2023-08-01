@@ -17,21 +17,12 @@ public class CoinCollections : MonoBehaviour
     public float maxFuel = 10f;
     public float UseFuel = 1f;
     public float MinValue = 1f;
-
-
- 
-   
     private void Start()
     {
         if (instance == null)
         {
             instance = this;
         }
-    }
-    private void Update()
-    {
-      
-
     }
 
     public void Scoreing()
@@ -61,9 +52,9 @@ public class CoinCollections : MonoBehaviour
 
         FuelSlider.value = CurrentFuel;
       if (CurrentFuel<MinValue)
-        {
+      {
             CurrentFuel = 0;
-        }
+      }
     }
 
     public void Refill()

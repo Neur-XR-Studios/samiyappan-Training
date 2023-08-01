@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine.UI;
 using Unity.Mathematics;
 using System;
-
 public class DistanceCal : MonoBehaviour
 {
     public GameObject Carpoint;
@@ -15,11 +14,8 @@ public class DistanceCal : MonoBehaviour
     public GameObject distanceValue;
     public TMP_Text distanceValueText;
     
-
-
     private void Start()
     {
-       
         Carpoint = GameObject.Find("Customer");      
         distanceValue = GameObject.Find("Distance");
         distanceValueText = distanceValue.GetComponent<TMP_Text>();
@@ -27,8 +23,6 @@ public class DistanceCal : MonoBehaviour
     }   
     void Update()
     {
-
-
        int roundedValue = Mathf.RoundToInt(DistanceValue);
 
        /* Debug.Log(roundedValue);
@@ -41,6 +35,4 @@ public class DistanceCal : MonoBehaviour
        
         DistanceValue = Vector3.Distance(Carpoint.transform.position, Endpoint.transform.position);
     }
-
-    
 }

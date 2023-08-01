@@ -8,10 +8,7 @@ public class Collocter : MonoBehaviour
     {
         if(collision.CompareTag("Enemy_T") || collision.CompareTag("Player")) 
         {
-
             Destroy(collision.gameObject);
-         
-
         }
     }
 }

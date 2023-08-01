@@ -9,10 +9,6 @@ public class ButtonDisable : MonoBehaviour
     public string Tagname;
     public bool hit;
     public bool Acpet = true;
-
-
-
-
     private void Start()
     {
         pickupBtn.SetActive(false);
@@ -28,25 +24,18 @@ public class ButtonDisable : MonoBehaviour
     {
         if (DistanceCal.DistanceValue > 0 && DistanceCal.DistanceValue < 2)
         {
-
-
             if (AcceptIgnore.Accept)
             {
                 pickupBtn.SetActive(false);
                 Ingnore.SetActive(false);
                 DropBtn.SetActive(true);
-              
-               
-
             }
             else
             {
                 DropBtn.SetActive(false);
                 pickupBtn.SetActive(true);
                 Ingnore.SetActive(true);
-            }       
-
-
+            }  
         }
         else 
         {
@@ -54,8 +43,5 @@ public class ButtonDisable : MonoBehaviour
             Ingnore.SetActive(false);
             DropBtn.SetActive(false);
         }    
-
-
     }
- 
 }

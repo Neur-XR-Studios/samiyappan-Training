@@ -1,18 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Rotate : MonoBehaviour
 {
     private float Speed = 100f;
     public GameObject CoinExplotion;
-    
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
     private void Update()
     {
         Destroy(gameObject, 20);
@@ -34,9 +26,6 @@ public class Rotate : MonoBehaviour
          CoinCollections.instance.Scoreing();
          Destroy(gameObject); 
          Destroy(CoinEX ,1);
-         
-
         }
-
     }
 }

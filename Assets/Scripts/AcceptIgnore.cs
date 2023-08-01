@@ -8,17 +8,10 @@ public class AcceptIgnore : MonoBehaviour
     public GameObject Arrow;
 
     public static bool Accept= false;
-    
-
-
-
     public void Update()
     {
       U1();
-
-
     }
-
     public void  IGN()
     {
         playerPickp.Ignore();
@@ -37,8 +30,5 @@ public class AcceptIgnore : MonoBehaviour
     {
         Arrow = GameObject.Find("A1 1");
         playerPickp = Arrow.GetComponent<PlayerPickp>();
-
     }
-
-
 }

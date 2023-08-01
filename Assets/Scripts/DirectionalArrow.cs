@@ -11,11 +11,8 @@ public class DirectionalArrow : MonoBehaviour
     public bool arrowDetect;
     public GameObject G1;
 
-  
-
     private  void Update()
     {
-
         if (arrowDetect == true)
         {
             G1 =GameObject.Find("Arrow");
@@ -27,20 +24,15 @@ public class DirectionalArrow : MonoBehaviour
         }
         else
         {
-
+            //
         }
     }
     public void DetectArrow()
     {
         arrowDetect = true;
-
     }
     public void DArrow()
-    
     {
-
         arrowDetect = false;
     }
-
-
 }
