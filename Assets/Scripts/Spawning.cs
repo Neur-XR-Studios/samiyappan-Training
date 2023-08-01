@@ -46,6 +46,8 @@ public class Spawning : MonoBehaviour
     public void RandomObjects()
     {
         i = 0;
+        j = 0;
+
         Array.Clear(distanceObject,0, distanceObject.Length);
         Array.Clear(distance2,0, distance2.Length);
 
