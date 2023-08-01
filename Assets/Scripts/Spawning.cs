@@ -17,14 +17,11 @@ public class Spawning : MonoBehaviour
     public DirectionalArrow directionalArrowl;
     public GameObject[] Point1;
     public float[] distanceObject;
-    public float[] distance2;   
-    public List<float> distanceList;
+    public float[] distance2;
+    public List<float> distanceList;//= new List<float>();  
     public List<float> RandoRangePeople;
-
-    //public GameObject MeshRednderDisable;
-
-
     public SkinnedMeshRenderer skinnedMeshRenderer;
+
     int i = 0;
     int j = 0;
 
@@ -54,7 +51,8 @@ public class Spawning : MonoBehaviour
     {
         i = 0;
         j = 0;
-        
+
+        distanceList.Clear();
 
         Array.Clear(distanceObject,0, distanceObject.Length);
         Array.Clear(distance2,0, distance2.Length);
@@ -63,7 +61,7 @@ public class Spawning : MonoBehaviour
         //distance2 = new float[Point1.Length];
         //distanceObject.AddRange(new List<float>());
         //distance2 .AddRange(new List<float>());
-       // RandomObjectdistanceList();
+      
         foreach (GameObject obj in Point1)
         {
             
@@ -92,20 +90,8 @@ public class Spawning : MonoBehaviour
         spawnedperson.transform.parent = transform;
         directionalArrowl.DetectArrow();
         Debug.Log("Distance " + " random" + randompositionofAPerson);
-
         
-
     }
-
-    public void RandomObjectdistanceList()
-    {
-     
-        for(int k = 0; k < distanceList.Count; k++) 
-        {
-            distanceList[k] = 0;
-        }   
-    }
-
     public void DisableMesh()
     {
         skinnedMeshRenderer.enabled = false;
