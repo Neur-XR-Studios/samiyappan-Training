@@ -44,19 +44,6 @@ public class CarControll : MonoBehaviour
             CarSpeedvalue = CarSpeedvalue +(5*Time.deltaTime);
             CarSpeedmax = (int)(CarSpeedvalue);
             CarSpeed.text = CarSpeedmax.ToString();
-            if (CarSpeedvalue >= 60)
-            {
-                
-                CarSpeedaudio.Play();
-            }
-            else
-            {
-                
-                CarSpeedaudio.Stop();
-                Debug.Log(" no sound");
-            }
-
-
         }
       
         else
@@ -64,18 +51,34 @@ public class CarControll : MonoBehaviour
             if (CarSpeedvalue > 0)
             {
                 CarSpeedvalue = CarSpeedvalue - (5 * Time.deltaTime);
-
                 CarSpeedmax = (int)(CarSpeedvalue);
                 CarSpeed.text = CarSpeedmax.ToString();
-                
             }
             else if (CarSpeedvalue > 80)
             {
-
             }
 
 
         }
+
+
+
+
+        if (CarSpeedvalue >= 60)
+        {
+            Debug.Log("  warning");
+            CarSpeedaudio.Play();
+        }
+        else
+        {
+
+            CarSpeedaudio.Stop();
+           
+        }
+
+
+
+
 
         if (Currentacceleration != 0)
         {
