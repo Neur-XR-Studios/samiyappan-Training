@@ -3,11 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class CarControll : MonoBehaviour
 {
+    public Rigidbody carObject;
+    public static CarControll instance;
+     
     [SerializeField] WheelCollider FrontR;
     [SerializeField] WheelCollider FrontL;
     [SerializeField] WheelCollider BackR;
@@ -25,27 +29,44 @@ public class CarControll : MonoBehaviour
 
 
     private float Currentacceleration = 0f;
-    private float Currentbreakforce = 0f;
+    public static float Currentbreakforce = 0f;
     private float Currentmaxt_Angle = 0f;
 
     public TMP_Text CarSpeed;
     public float CarSpeedvalue = 0;
     int CarSpeedmax = 0;
 
+    private bool CarSpawns = true;
+    private bool CarSpawns2 = true;
+
     public GameObject siren;
-    public AudioSource CarSpeedaudio;
+
+    public GameObject PoliceCar;
+    public void Start()
+    {
+
+        carObject.GetComponent<Rigidbody>();
+        if (instance == null)
+        {
+            instance =this;
+        }
+    }
+    //public AudioSource CarSpeedaudio;
 
     public void FixedUpdate()
     {
+
+        PoliceCar = GameObject.Find("PoliceCar(Clone)");
         Currentacceleration = acceleration * Input.GetAxis("Vertical");
 
         if ((Input.GetKey(KeyCode.UpArrow)) || (Input.GetKey(KeyCode.DownArrow)))
         {
-            CarSpeedvalue = CarSpeedvalue +(5*Time.deltaTime);
+            CarSpeedvalue = CarSpeedvalue + (5 * Time.deltaTime);
             CarSpeedmax = (int)(CarSpeedvalue);
             CarSpeed.text = CarSpeedmax.ToString();
+         
         }
-      
+
         else
         {
             if (CarSpeedvalue > 0)
@@ -53,36 +74,55 @@ public class CarControll : MonoBehaviour
                 CarSpeedvalue = CarSpeedvalue - (5 * Time.deltaTime);
                 CarSpeedmax = (int)(CarSpeedvalue);
                 CarSpeed.text = CarSpeedmax.ToString();
+                StartWheel();
             }
             else if (CarSpeedvalue > 80)
             {
             }
-
-
         }
 
+     
 
+        // siren sound
 
 
         if (CarSpeedvalue >= 60)
         {
-            Debug.Log("  warning");
-            CarSpeedaudio.Play();
+            siren.gameObject.SetActive(true);
+
+            // CarSpawns = true;
+            if (CarSpeedvalue >= 90 && CarSpawns == true)
+            {
+                SpawnPolice.instance.PoliceSpawning();
+                CarSpawns = false;
+                CarSpawns2 = true;
+
+
+            }
+           /* else if (CarSpeedvalue <= 90 && CarSpawns2 == true)
+            {
+                Destroy(PoliceCar);
+                CarSpawns2=false;
+                CarSpawns = true;
+
+            }   */
+
         }
         else
         {
 
-            CarSpeedaudio.Stop();
-           
+            siren.gameObject.SetActive(false);
+
         }
 
+        
 
 
 
-
+        // Fuel Feilling
         if (Currentacceleration != 0)
         {
-          
+
             CoinCollections.instance.Fuel();
         }
 
@@ -105,7 +145,7 @@ public class CarControll : MonoBehaviour
 
         Currentmaxt_Angle = Maxt_Angle * Input.GetAxis("Horizontal");
         {
-           
+
         }
 
         FrontR.steerAngle = Currentmaxt_Angle;
@@ -117,16 +157,30 @@ public class CarControll : MonoBehaviour
         Wheelpos(BackR, T_BackR);
 
     }
-    void Wheelpos(WheelCollider col ,Transform transform)
+    void Wheelpos(WheelCollider col, Transform transform)
     {
         Vector3 position;
 
         Quaternion rotation;
 
-        col .GetWorldPose (out position, out rotation);
+        col.GetWorldPose(out position, out rotation);
 
         transform.position = position;
         transform.rotation = rotation;
     }
-   
-}
+
+    public void StopWheel()
+    {
+
+        carObject.constraints = RigidbodyConstraints.FreezePosition;     
+
+
+    }
+
+    public void StartWheel()
+    {
+        carObject.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
+    }
+    
+
+}           

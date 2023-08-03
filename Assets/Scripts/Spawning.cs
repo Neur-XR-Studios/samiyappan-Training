@@ -57,10 +57,6 @@ public class Spawning : MonoBehaviour
         Array.Clear(distanceObject,0, distanceObject.Length);
         Array.Clear(distance2,0, distance2.Length);
 
-        //distanceObject = new float[Point1.Length];
-        //distance2 = new float[Point1.Length];
-        //distanceObject.AddRange(new List<float>());
-        //distance2 .AddRange(new List<float>());
       
         foreach (GameObject obj in Point1)
         {
@@ -84,8 +80,7 @@ public class Spawning : MonoBehaviour
         int traveller = Random.Range(0, Point1.Length);
         GameObject randomPerson = Point1[traveller];
         Vector3 randompositionofAPerson = randomPerson.transform.position;
-        GameObject spawnedperson = Instantiate(spawning, randomPerson.transform.position, Quaternion.identity);
-      
+        GameObject spawnedperson = Instantiate(spawning, randomPerson.transform.position, Quaternion.identity);      
         skinnedMeshRenderer = spawnedperson.GetComponentInChildren<SkinnedMeshRenderer>();
         spawnedperson.transform.parent = transform;
         directionalArrowl.DetectArrow();

@@ -9,6 +9,7 @@ TagManager:
   - Button
   - PDI
   - Coinexplosion
+  - police
   layers:
   - Default
   - TransparentFX
