@@ -17,21 +17,24 @@ public class PlayerPickp : MonoBehaviour
     public GameObject PlayerOne;
     public GameObject PlayerTwo;
     public GameObject PlayerThree;
+    public PlayerWalk walking;
     public void Start()
     {
         SpawnObj = GameObject.Find("SpawningObjects");
         spawn = SpawnObj.GetComponent<Spawning>();
+    
 
     }
     private void Update()
     {
         PlayerTwo = GameObject.Find("Magic circle 2");
         PlayerThree = GameObject.Find("WomenCustomer");
+
+        PointDisable = GameObject.Find("A1 1");
+        PlayerOne = GameObject.Find("People(Clone)");
     }
     public void Droping()
     {
-        PointDisable = GameObject.Find("A1 1");
-        PlayerOne = GameObject.Find("People(Clone)");
        
     }
     public void Ignore()
@@ -49,13 +52,17 @@ public class PlayerPickp : MonoBehaviour
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
         Droping();
         Destroy(PlayerOne);
+        Destroy(PointDisable);
+        Destroy(PlayerTwo);
         spawn.RandomObjects();
         
     }
     public void Pickup()
     {
         CoinCollections.instance.PickupMoney();
+        Destroy(PointDisable);
         Destroy(PlayerOne);
+        Destroy(PlayerTwo);
         spawn.RandomObjects();
         spawn.DisableMesh();
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
@@ -87,5 +94,7 @@ public class PlayerPickp : MonoBehaviour
         }
     }
 
+
+    
    
 }

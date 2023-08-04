@@ -8,7 +8,9 @@ public class MovePoliceCar : MonoBehaviour
   
    // public Transform toobject;
     public float speed;
+    public PlayerWalk walk;
     public GameObject carfind;
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,8 @@ public class MovePoliceCar : MonoBehaviour
            
             //gameObject.GetComponent<MovePoliceCar>().enabled = false;
             CarControll.instance.StopWheel();
+            
+
         }
     }
 

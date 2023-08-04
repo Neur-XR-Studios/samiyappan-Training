@@ -6,13 +6,26 @@ public class AcceptIgnore : MonoBehaviour
 {
     public PlayerPickp playerPickp;
     public GameObject Arrow;
-
-    public static bool Accept= false;
+    public PlayerWalk walk;
+    public Animator walkWalk;
+   
+   
+    public static bool Accept = false;
     public void Update()
     {
-      U1();
+        U1();
+
+        walk = GameObject.Find("WomenCustomerFollow").GetComponent<PlayerWalk>();
+        walkWalk = GameObject.Find("WomenCustomerFollow").GetComponent<Animator>();
+       
+
+        
+       
+        
+
+
     }
-    public void  IGN()
+    public void IGN()
     {
         playerPickp.Ignore();
     }
@@ -21,7 +34,7 @@ public class AcceptIgnore : MonoBehaviour
         Accept = false;
         playerPickp.Drop();
     }
-    public void pickup() 
+    public void pickup()
     {
         Accept = true;
         playerPickp.Pickup();
@@ -30,5 +43,17 @@ public class AcceptIgnore : MonoBehaviour
     {
         Arrow = GameObject.Find("A1 1");
         playerPickp = Arrow.GetComponent<PlayerPickp>();
+    }
+    public void U2()
+    {
+       
+        walk.enabled = true;
+        walk.MoveToNextWord();
+        walkWalk.enabled = true;
+        Debug.Log(" move");
+        
+
+
+
     }
 }
