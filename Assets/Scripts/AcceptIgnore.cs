@@ -46,13 +46,14 @@ public class AcceptIgnore : MonoBehaviour
     }
     public void U2()
     {
+        
        
         walk.enabled = true;
         walk.MoveToNextWord();
         walkWalk.enabled = true;
         Debug.Log(" move");
         
-
+      
 
 
     }

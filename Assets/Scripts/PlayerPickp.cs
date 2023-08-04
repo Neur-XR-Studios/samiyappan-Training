@@ -30,12 +30,12 @@ public class PlayerPickp : MonoBehaviour
         PlayerTwo = GameObject.Find("Magic circle 2");
         PlayerThree = GameObject.Find("WomenCustomer");
 
-        PointDisable = GameObject.Find("A1 1");
-        PlayerOne = GameObject.Find("People(Clone)");
+        
     }
     public void Droping()
     {
-       
+        PointDisable = GameObject.Find("A1 1");
+        PlayerOne = GameObject.Find("People(Clone)");
     }
     public void Ignore()
     {
@@ -61,7 +61,7 @@ public class PlayerPickp : MonoBehaviour
     {
         CoinCollections.instance.PickupMoney();
         Destroy(PointDisable);
-        Destroy(PlayerOne);
+       // Destroy(PlayerOne);
         Destroy(PlayerTwo);
         spawn.RandomObjects();
         spawn.DisableMesh();

@@ -12,7 +12,10 @@ public class PlayerWalk : MonoBehaviour
     public float speed;
     private int currentTargetIndex = 0;
     public Animator animator;
-    
+    public Animator Dopen;
+    public GameObject Door;
+    public GameObject Objone;
+  
     private void Start()
     {
         if (Instance == null)
@@ -20,6 +23,8 @@ public class PlayerWalk : MonoBehaviour
             Instance = this;
         }
 
+        Door = GameObject.Find("door_front_L");
+        Dopen = GameObject.Find("door_front_L").GetComponent<Animator>();
         targetWords = new Transform[3];
         targetWords[0] = GameObject.Find("point1").transform; 
         targetWords[1] = GameObject.Find("point2").transform;
@@ -27,11 +32,16 @@ public class PlayerWalk : MonoBehaviour
 
 
         animator = GetComponent<Animator>();
+       
+
+
+        
     }
+
 
     void Update()
     {
-
+        Objone = GameObject.Find("People(Clone)");
         MoveToNextWord();
     }
 
@@ -45,18 +55,16 @@ public class PlayerWalk : MonoBehaviour
 
         if (Vector3.Distance(transform.position, targetPosition) < 0.01f)
         {
-            // If the object is very close to the current target, move to the next one
             currentTargetIndex++;
-
-            // Check if we have reached the last target
+       
             if (currentTargetIndex >= targetWords.Length)
             {
-                // Stop moving the GameObject
                 animator.enabled = false;
                 enabled = false;
-                
-
-               // Debug.Log("Reached the last element. Movement stopped.");
+                Dopen.enabled = true;
+                Dopen.Play("Open_door");
+                Destroy(gameObject,1f);
+                Destroy(Objone, 1.3f);
             }
         }
     }

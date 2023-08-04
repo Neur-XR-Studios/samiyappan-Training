@@ -16,9 +16,6 @@ public class SpawnPolice : MonoBehaviour
             instance = this;
         }
     }
-    
-
-    // Update is called once per frame
    public void PoliceSpawning()
     {
         GameObject PoliceSpawnOn = Instantiate(PoliceSpawn, new Vector3(Random.Range(-30, 30), gameObject.transform.position.y, Random.Range(-40, 40)), Quaternion.identity);
