@@ -38,7 +38,7 @@ public class Spawning : MonoBehaviour
 
     public void Spawn()
     {
-        isplayer = true;
+       
 /*
         GameObject CustomerSpawn = Instantiate(spawning, new Vector3(Random.Range(-30, 30), gameObject.transform.position.y, Random.Range(-40, 40)), Quaternion.identity);
         CustomerSpawn.transform.parent = transform;
@@ -80,6 +80,7 @@ public class Spawning : MonoBehaviour
         int traveller = Random.Range(0, Point1.Length);
         GameObject randomPerson = Point1[traveller];
         Vector3 randompositionofAPerson = randomPerson.transform.position;
+        isplayer = true;
         GameObject spawnedperson = Instantiate(spawning, randomPerson.transform.position, Quaternion.identity);      
         skinnedMeshRenderer = spawnedperson.GetComponentInChildren<SkinnedMeshRenderer>();
         spawnedperson.transform.parent = transform;
