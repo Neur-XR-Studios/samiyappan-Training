@@ -17,46 +17,40 @@ public class PlayerPickp : MonoBehaviour
     public GameObject PlayerOne;
     public GameObject PlayerTwo;
     public GameObject PlayerThree;
-    public GameObject PlayerFour;
-    public GameObject PlayerFive;
     public PlayerWalk walking;
     public void Start()
     {
         SpawnObj = GameObject.Find("SpawningObjects");
         spawn = SpawnObj.GetComponent<Spawning>();
-
+    
 
     }
     private void Update()
     {
         PlayerTwo = GameObject.Find("Magic circle 2");
         PlayerThree = GameObject.Find("WomenCustomer");
-        PlayerFour = GameObject.Find("WomenCustomerFollow");
-        PlayerFive = GameObject.Find("EmptyMesh");
 
-
-
+        
     }
     public void Droping()
     {
         PointDisable = GameObject.Find("A1 1");
         PlayerOne = GameObject.Find("People(Clone)");
-
     }
     public void Ignore()
     {
         GetSpawnObj2();
         Droping();
-        DestroyingObj();       
         Destroy(PointDisable);
-        spawn.RandomObjects();
+        spawn.RandomObjects();     
         PlayerTwo.gameObject.SetActive(false);
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = true;
+        GetSpawnObj2();
         this.PointDisable.gameObject.SetActive(false);
     }
     public void Drop()
     {
-
+    
         Droping();
         spawn.RandomObjects();
         Destroy(PlayerOne);
@@ -64,13 +58,12 @@ public class PlayerPickp : MonoBehaviour
         Destroy(PlayerTwo);
         CoinCollections.instance.DropMoney();
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
-
-
-
+        
+    
+        
     }
     public void Pickup()
     {
-        GetSpawnObj();
         CoinCollections.instance.PickupMoney();
         Destroy(PointDisable);
         Destroy(PlayerOne);
@@ -78,6 +71,7 @@ public class PlayerPickp : MonoBehaviour
         spawn.RandomObjects();
         spawn.DisableMesh();
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
+        GetSpawnObj();
         Droping();
     }
     public void GetSpawnObj()
@@ -92,9 +86,9 @@ public class PlayerPickp : MonoBehaviour
     }
     public void GetSpawnObj2()
     {
-        if ((SpawnObj.transform.childCount >= 1))
+        if ((SpawnObj.transform.childCount > 1))
         {
-            for (int i = 0; i < SpawnObj.transform.childCount - 1; i++)
+            for (int i = 0; i < SpawnObj.transform.childCount - 2; i++)
             {
                 GameObject child = SpawnObj.transform.GetChild(i).gameObject;
                 Destroy(child);
@@ -102,16 +96,8 @@ public class PlayerPickp : MonoBehaviour
             }
         }
     }
-    public void DestroyingObj()
-
-    {
-        Droping();
-        PlayerFive.GetComponent<SkinnedMeshRenderer>().enabled = true;      
-        Destroy(PlayerFour);
-
-    }
 
 
-
-
+    
+   
 }
