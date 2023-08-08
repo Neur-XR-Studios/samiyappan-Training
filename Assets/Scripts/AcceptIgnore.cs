@@ -38,6 +38,7 @@ public class AcceptIgnore : MonoBehaviour
     {
         Accept = true;
         playerPickp.Pickup();
+       
     }
     public void U1()
     {
