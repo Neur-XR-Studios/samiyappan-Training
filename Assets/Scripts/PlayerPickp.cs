@@ -20,6 +20,8 @@ public class PlayerPickp : MonoBehaviour
     public GameObject PlayerFour;
     public GameObject PlayerFive;
     public PlayerWalk walking;
+    
+   
     public void Start()
     {
         SpawnObj = GameObject.Find("SpawningObjects");
@@ -32,7 +34,9 @@ public class PlayerPickp : MonoBehaviour
         PlayerTwo = GameObject.Find("Magic circle 2");
         PlayerThree = GameObject.Find("WomenCustomer");
         PlayerFour = GameObject.Find("WomenCustomerFollow");
+        
         PlayerFive = GameObject.Find("EmptyMesh");
+
 
 
 
@@ -51,6 +55,7 @@ public class PlayerPickp : MonoBehaviour
         DestroyingObj();
         Destroy(PointDisable);
         spawn.RandomObjects();
+        PlayerFive.GetComponent<SkinnedMeshRenderer>().enabled = true;
         PlayerTwo.gameObject.SetActive(false);
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = true;
         this.PointDisable.gameObject.SetActive(false);
@@ -109,8 +114,11 @@ public class PlayerPickp : MonoBehaviour
         Droping();
         PlayerFive.GetComponent<SkinnedMeshRenderer>().enabled = true;
         Destroy(PlayerFour);
+        
 
     }
+
+
 
 
 
