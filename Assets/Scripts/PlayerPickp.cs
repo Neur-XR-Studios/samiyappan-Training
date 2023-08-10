@@ -16,10 +16,10 @@ public class PlayerPickp : MonoBehaviour
     public GameObject PointDisable;
     public GameObject PlayerOne;
     public GameObject PlayerTwo;
-    public GameObject PlayerThree;
+   // public GameObject PlayerThree;
     public GameObject PlayerFour;
     public GameObject PlayerFive;
-    public PlayerWalk walking;
+    //public PlayerWalk walking;
     
    
     public void Start()
@@ -31,24 +31,22 @@ public class PlayerPickp : MonoBehaviour
     }
     private void Update()
     {
-        PlayerTwo = GameObject.Find("Magic circle 2");
-        PlayerThree = GameObject.Find("WomenCustomer");
-        PlayerFour = GameObject.Find("WomenCustomerFollow");
         
-      //  PlayerFive = GameObject.Find("EmptyMesh");
-
-
-
-
     }
     public void Droping()
     {
+        PlayerFour = GameObject.Find("WomenCustomerFollow");       
         PointDisable = GameObject.Find("A1 1");
         PlayerOne = GameObject.Find("People(Clone)");
 
     }
+    public void Circle()
+    {
+        PlayerTwo = GameObject.Find("Magic circle 2");
+    }
     public void Ignore()
     {
+        Circle();
         PlayerFive.GetComponent<SkinnedMeshRenderer>().enabled = true;       
         GetSpawnObj2();
         Droping();
@@ -56,11 +54,12 @@ public class PlayerPickp : MonoBehaviour
         Destroy(PointDisable);
         spawn.RandomObjects();       
         PlayerTwo.gameObject.SetActive(false);
-        PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = true;
+      //  PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = true;
         this.PointDisable.gameObject.SetActive(false);
     }
     public void Drop()
     {
+        Circle();
 
         Droping();
         spawn.RandomObjects();
@@ -68,13 +67,14 @@ public class PlayerPickp : MonoBehaviour
         Destroy(PointDisable);
         Destroy(PlayerTwo);
         CoinCollections.instance.DropMoney();
-        PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
+      //  PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
 
 
 
     }
     public void Pickup()
     {
+        Circle();
         GetSpawnObj();
         CoinCollections.instance.PickupMoney();
         Destroy(PointDisable);
@@ -82,7 +82,7 @@ public class PlayerPickp : MonoBehaviour
         Destroy(PlayerTwo);
         spawn.RandomObjects();
         spawn.DisableMesh();
-        PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
+       // PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = false;
         Droping();
     }
     public void GetSpawnObj()

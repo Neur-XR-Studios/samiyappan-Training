@@ -13,41 +13,36 @@ public class AcceptIgnore : MonoBehaviour
     public static bool Accept = false;
     public void Update()
     {
-        U1();
-
-        walk = GameObject.Find("WomenCustomerFollow").GetComponent<PlayerWalk>();
-        walkWalk = GameObject.Find("WomenCustomerFollow").GetComponent<Animator>();
-       
-
-        
-       
-        
-
-
     }
     public void IGN()
     {
+        U1();
         playerPickp.Ignore();
     }
     public void Drop1()
     {
+        U1();
         Accept = false;
         playerPickp.Drop();
     }
     public void pickup()
     {
+        U1();
         Accept = true;
         playerPickp.Pickup();
     }
     public void U1()
     {
+        walk = GameObject.Find("WomenCustomerFollow").GetComponent<PlayerWalk>();
+        walkWalk = GameObject.Find("WomenCustomerFollow").GetComponent<Animator>();
+
         Arrow = GameObject.Find("A1 1");
         playerPickp = Arrow.GetComponent<PlayerPickp>();
     }
     public void U2()
     {
-        
-       
+
+        U1();
         walk.enabled = true;
         walk.MoveToNextWord();
         walkWalk.enabled = true;

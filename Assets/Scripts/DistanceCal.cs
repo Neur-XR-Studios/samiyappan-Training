@@ -23,12 +23,11 @@ public class DistanceCal : MonoBehaviour
     }   
     void Update()
     {
-       int roundedValue = Mathf.RoundToInt(DistanceValue);
-
-       /* Debug.Log(roundedValue);
-        Debug.Log(DistanceValue);*/
+        int roundedValue = Mathf.RoundToInt(DistanceValue);      
         DistanceCalculation();
         distanceValueText.text = roundedValue.ToString();
+        /* Debug.Log(roundedValue);
+       Debug.Log(DistanceValue);*/
     }
     void DistanceCalculation()
     {
