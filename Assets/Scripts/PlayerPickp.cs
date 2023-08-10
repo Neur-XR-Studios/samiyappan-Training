@@ -35,7 +35,7 @@ public class PlayerPickp : MonoBehaviour
         PlayerThree = GameObject.Find("WomenCustomer");
         PlayerFour = GameObject.Find("WomenCustomerFollow");
         
-        PlayerFive = GameObject.Find("EmptyMesh");
+      //  PlayerFive = GameObject.Find("EmptyMesh");
 
 
 
@@ -49,13 +49,12 @@ public class PlayerPickp : MonoBehaviour
     }
     public void Ignore()
     {
-        DestroyingObj();
+        PlayerFive.GetComponent<SkinnedMeshRenderer>().enabled = true;       
         GetSpawnObj2();
         Droping();
         DestroyingObj();
         Destroy(PointDisable);
-        spawn.RandomObjects();
-        PlayerFive.GetComponent<SkinnedMeshRenderer>().enabled = true;
+        spawn.RandomObjects();       
         PlayerTwo.gameObject.SetActive(false);
         PlayerThree.GetComponent<SkinnedMeshRenderer>().enabled = true;
         this.PointDisable.gameObject.SetActive(false);

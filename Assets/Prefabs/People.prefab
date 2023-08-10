@@ -24467,6 +24467,8 @@ MonoBehaviour:
   PlayerOne: {fileID: 0}
   PlayerTwo: {fileID: 0}
   PlayerThree: {fileID: 0}
+  PlayerFour: {fileID: 0}
+  PlayerFive: {fileID: 7654715133018803648}
   walking: {fileID: 0}
 --- !u!136 &654775329373316935
 CapsuleCollider:
