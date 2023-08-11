@@ -64,7 +64,8 @@ public class PlayerWalk : MonoBehaviour
                 Dopen.enabled = true;
                 Dopen.Play("Open_door");
                 Destroy(gameObject,1f);
-                Destroy(Objone, 1.3f);
+                Destroy(Objone,1.3f);
+                AcceptIgnore.instance.DropDeActive();
             }
         }
     }

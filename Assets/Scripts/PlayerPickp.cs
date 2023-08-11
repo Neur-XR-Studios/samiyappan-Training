@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class PlayerPickp : MonoBehaviour
 {
-
+    public static PlayerPickp instance;
     public Spawning spawn;
     public GameObject SpawnObj;
 
@@ -26,6 +26,10 @@ public class PlayerPickp : MonoBehaviour
     {
         SpawnObj = GameObject.Find("SpawningObjects");
         spawn = SpawnObj.GetComponent<Spawning>();
+        if(instance == null )
+        {
+            instance = this;
+        }
 
 
     }
@@ -116,7 +120,15 @@ public class PlayerPickp : MonoBehaviour
         
 
     }
+    public void DropAni()
+    {
 
+    }
+
+   
+
+
+    
 
 
 

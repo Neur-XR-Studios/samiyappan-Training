@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class AcceptIgnore : MonoBehaviour
 {
+    public static AcceptIgnore instance;
     public PlayerPickp playerPickp;
     public GameObject Arrow;
     public PlayerWalk walk;
     public Animator walkWalk;
+    public GameObject DropingPoints;
    
    
     public static bool Accept = false;
+
+
+    public void Start()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     public void Update()
     {
+        DropingPoints = GameObject.Find("Droping");
     }
     public void IGN()
     {
@@ -23,6 +35,7 @@ public class AcceptIgnore : MonoBehaviour
     {
         U1();
         Accept = false;
+       // DropPlayer.Instance.OpenDoor();
         playerPickp.Drop();
     }
     public void pickup()
@@ -30,6 +43,7 @@ public class AcceptIgnore : MonoBehaviour
         U1();
         Accept = true;
         playerPickp.Pickup();
+      
     }
     public void U1()
     {
@@ -38,6 +52,8 @@ public class AcceptIgnore : MonoBehaviour
 
         Arrow = GameObject.Find("A1 1");
         playerPickp = Arrow.GetComponent<PlayerPickp>();
+
+        
     }
     public void U2()
     {
@@ -52,4 +68,18 @@ public class AcceptIgnore : MonoBehaviour
 
 
     }
+
+    public void DropDeActive()
+    {
+      //  DropingPoints = GameObject.Find("Droping");
+        DropingPoints.SetActive(false);
+
+
+    }
+    public void DropActive()
+    {
+       // DropingPoints = GameObject.Find("Droping");
+        DropingPoints.SetActive(true);
+    }
+
 }

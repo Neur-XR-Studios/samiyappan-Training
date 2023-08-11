@@ -13,7 +13,8 @@ public class DropPlayer : MonoBehaviour
     public Animator Dopen;
     public GameObject Door;
     public GameObject Objone;
-
+    
+   
     private void Start()
     {
         if (Instance == null)
@@ -23,26 +24,31 @@ public class DropPlayer : MonoBehaviour
 
         Door = GameObject.Find("door_front_L");
         Dopen = GameObject.Find("door_front_L").GetComponent<Animator>();
-        targetWords = new Transform[3];
-        targetWords[0] = GameObject.Find("point1").transform;
-        targetWords[1] = GameObject.Find("point2").transform;
-        targetWords[2] = GameObject.Find("point3").transform;
-
-
+      
+        targetWords = new Transform[5];
+        targetWords[0] = GameObject.Find("Dpoint5").transform;
+        targetWords[1] = GameObject.Find("Dpoint4").transform;
+        targetWords[2] = GameObject.Find("Dpoint3").transform;
+        targetWords[3] = GameObject.Find("Dpoint2").transform;
+        targetWords[4] = GameObject.Find("Dpoint1").transform;
         animator = GetComponent<Animator>();
-
-
-
-
     }
 
 
     void Update()
     {
-        Objone = GameObject.Find("People(Clone)");
+        // Objone = GameObject.Find("People(Clone)");
+        // DropCustomer();
         DropCustomer();
     }
-        
+    public void OpenDoor()
+    {
+        animator.enabled = true;
+        Dopen.enabled = true;
+        Dopen.Play("Open_door");
+
+    }
+
 
     public void DropCustomer()
     {
@@ -58,13 +64,18 @@ public class DropPlayer : MonoBehaviour
 
             if (currentTargetIndex >= targetWords.Length)
             {
-                animator.enabled = false;
+              // animator.enabled = true;
                 enabled = false;
-                Dopen.enabled = true;
-                Dopen.Play("Open_door");
+               // Dopen.enabled = true;
+               //open.Play("Open_door");
                 Destroy(gameObject, 1f);
                 Destroy(Objone, 1.3f);
+                PlayerPickp.instance.Ignore();
+
+
             }
         }
     }
+
+
 }
