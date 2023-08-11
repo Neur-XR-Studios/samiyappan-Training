@@ -3289,6 +3289,7 @@ MonoBehaviour:
   Arrow: {fileID: 0}
   walk: {fileID: 0}
   walkWalk: {fileID: 0}
+  DropingPoints: {fileID: 0}
 --- !u!1 &941230588
 GameObject:
   m_ObjectHideFlags: 0
@@ -13104,7 +13105,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.2773876
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -13200,7 +13201,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.2773876
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -13296,7 +13297,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.27738756
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -13392,7 +13393,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.2773876
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -13479,8 +13480,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.49485394, z: 1}
-  m_Center: {x: 0, y: -0.25257283, z: 0}
+  m_Size: {x: 1, y: 0.20137104, z: 0.5859787}
+  m_Center: {x: 0, y: -0.10583139, z: -0.07791974}
 --- !u!65 &1701911433
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13492,8 +13493,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.40121743, z: 0.9999999}
-  m_Center: {x: 0, y: 0.29939136, z: 0}
+  m_Size: {x: 1, y: 0.40121743, z: 0.30934832}
+  m_Center: {x: 0, y: 0.29939136, z: -0.036687393}
 --- !u!65 &1701916587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13505,8 +13506,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.34782135, z: 1}
-  m_Center: {x: 0, y: -0.32608914, z: -8.7028196e-10}
+  m_Size: {x: 1, y: 0.34782135, z: 0.41706255}
+  m_Center: {x: 0, y: -0.3260881, z: -0.29146942}
 --- !u!95 &1702939455
 Animator:
   serializedVersion: 5
@@ -14466,9 +14467,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.41453108
-  m_Height: 4.485845
+  m_Height: 1.0620338
   m_Direction: 0
-  m_Center: {x: 0.003199154, y: 1.0724363, z: -1.1989655e-20}
+  m_Center: {x: -0.1226132, y: 1.0724363, z: -1.1989655e-20}
 --- !u!1 &1989697958
 GameObject:
   m_ObjectHideFlags: 0

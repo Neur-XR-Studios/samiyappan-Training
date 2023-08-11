@@ -52,8 +52,12 @@ public class CarControll : MonoBehaviour
         }
     }
     //public AudioSource CarSpeedaudio;
-
     public void FixedUpdate()
+    {
+        CarMove();
+    }
+        
+    public void CarMove()
     {
 
         PoliceCar = GameObject.Find("PoliceCar(Clone)");

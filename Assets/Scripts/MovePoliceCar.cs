@@ -39,6 +39,8 @@ public class MovePoliceCar : MonoBehaviour
            
             //gameObject.GetComponent<MovePoliceCar>().enabled = false;
             CarControll.instance.StopWheel();
+
+            Application.Quit();
             
 
         }
