@@ -34,10 +34,12 @@ public class AcceptIgnore : MonoBehaviour
     public void Drop1()
     {
         U1();
-        Accept = false;
-       // DropPlayer.Instance.OpenDoor();
-        playerPickp.Drop();
+       // Accept = false;
+        DropPlayer.Instance.OpenDoor();
+        //playerPickp.Drop();
+
     }
+    
     public void pickup()
     {
         U1();

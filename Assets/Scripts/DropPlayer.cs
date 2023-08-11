@@ -42,10 +42,12 @@ public class DropPlayer : MonoBehaviour
         DropCustomer();
     }
     public void OpenDoor()
-    {
+    {/*
         animator.enabled = true;
         Dopen.enabled = true;
         Dopen.Play("Open_door");
+       */
+
 
     }
 
@@ -70,7 +72,7 @@ public class DropPlayer : MonoBehaviour
                //open.Play("Open_door");
                 Destroy(gameObject, 1f);
                 Destroy(Objone, 1.3f);
-                PlayerPickp.instance.Ignore();
+                PlayerPickp.instance.Drop();
 
 
             }

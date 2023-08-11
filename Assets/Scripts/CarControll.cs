@@ -55,6 +55,7 @@ public class CarControll : MonoBehaviour
     public void FixedUpdate()
     {
         CarMove();
+        Stearing();
     }
         
     public void CarMove()
@@ -147,19 +148,23 @@ public class CarControll : MonoBehaviour
         BackR.brakeTorque = Currentbreakforce;
         BackL.brakeTorque = Currentbreakforce;
 
-        Currentmaxt_Angle = Maxt_Angle * Input.GetAxis("Horizontal");
-        {
+       
 
-        }
-
-        FrontR.steerAngle = Currentmaxt_Angle;
-        FrontL.steerAngle = Currentmaxt_Angle;
+      
 
         Wheelpos(FrontR, T_FrontR);
         Wheelpos(BackL, T_BackL);
         Wheelpos(FrontL, T_FrontL);
         Wheelpos(BackR, T_BackR);
 
+    }
+    public void Stearing()
+    {
+        Currentmaxt_Angle = Maxt_Angle * Input.GetAxis("Horizontal");
+        {
+            FrontR.steerAngle = Currentmaxt_Angle;
+            FrontL.steerAngle = Currentmaxt_Angle;
+        }
     }
     void Wheelpos(WheelCollider col, Transform transform)
     {
