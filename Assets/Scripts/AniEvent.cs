@@ -14,7 +14,8 @@ public class AniEvent : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void s1()
+
     {
         animat.Invoke();
 

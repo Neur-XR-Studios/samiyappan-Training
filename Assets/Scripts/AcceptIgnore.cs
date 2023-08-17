@@ -10,6 +10,8 @@ public class AcceptIgnore : MonoBehaviour
     public PlayerWalk walk;
     public Animator walkWalk;
     public GameObject DropingPoints;
+    public DropPlayer DroppedPlayer;
+    
    
    
     public static bool Accept = false;
@@ -34,8 +36,7 @@ public class AcceptIgnore : MonoBehaviour
     public void Drop1()
     {
         U1();
-        Accept = false;
-       // DropPlayer.Instance.OpenDoor();
+        Accept = false;      
         playerPickp.Drop();
     }
     public void pickup()
@@ -48,6 +49,7 @@ public class AcceptIgnore : MonoBehaviour
     public void U1()
     {
         walk = GameObject.Find("WomenCustomerFollow").GetComponent<PlayerWalk>();
+        
         walkWalk = GameObject.Find("WomenCustomerFollow").GetComponent<Animator>();
 
         Arrow = GameObject.Find("A1 1");
@@ -81,5 +83,16 @@ public class AcceptIgnore : MonoBehaviour
        // DropingPoints = GameObject.Find("Droping");
         DropingPoints.SetActive(true);
     }
+    public void  DropAnimation()
+    {
+       
+        DroppedPlayer = GameObject.Find("DropPlayer").GetComponent<DropPlayer>();
+        walkWalk.enabled=true;
+        
 
+
+
+
+
+    }
 }
