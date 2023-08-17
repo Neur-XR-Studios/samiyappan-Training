@@ -78,7 +78,7 @@ public class CarControll : MonoBehaviour
                 CarSpeedvalue = CarSpeedvalue - (5 * Time.deltaTime);
                 CarSpeedmax = (int)(CarSpeedvalue);
                 CarSpeed.text = CarSpeedmax.ToString();
-                StartWheel();
+               // StartWheel();
             }
             else if (CarSpeedvalue > 80)
             {
@@ -183,7 +183,7 @@ public class CarControll : MonoBehaviour
 
     public void StartWheel()
     {
-        carObject.constraints = RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezeRotationX;
+        carObject.constraints = RigidbodyConstraints.FreezeAll;
     }
     
 

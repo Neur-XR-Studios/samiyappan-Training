@@ -35,12 +35,11 @@ public class MovePoliceCar : MonoBehaviour
     {
         if(other.gameObject.CompareTag("police"))
         {
-            CarControll.Currentbreakforce = 0f;
-           
-            //gameObject.GetComponent<MovePoliceCar>().enabled = false;
-            CarControll.instance.StopWheel();
+            CarControll.Currentbreakforce = 0f; 
+           // CarControll.instance.StopWheel();
+            CarControll.instance.enabled = false;
 
-            Application.Quit();
+          
             
 
         }

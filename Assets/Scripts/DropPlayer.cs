@@ -71,11 +71,6 @@ public class DropPlayer : MonoBehaviour
                 Destroy(gameObject, 1f);
                 Destroy(Objone, 1.3f);
                 AcceptIgnore.instance.Drop1();
-
-
-
-
-
                 PlayerPickp.instance.Ignore();
 
 
