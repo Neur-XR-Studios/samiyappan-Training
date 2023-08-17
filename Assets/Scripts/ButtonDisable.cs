@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonDisable : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class ButtonDisable : MonoBehaviour
     public string Tagname;
     public bool hit;
     public GameObject car;
+    public GameObject Explotion;
 
 
     public int Hittingcount;
     public bool Acpet = true;
+   
     private void Start()
     {
         pickupBtn.SetActive(false);
@@ -52,17 +55,19 @@ public class ButtonDisable : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("HitCount"))
-        {
-            Hittingcount++;
-            
+        {          
+                Hittingcount++;
 
-            if(Hittingcount >=6)
-            {
 
-                Destroy (car);
-                Debug.Log(Hittingcount);
-            }
-
+                if (Hittingcount >= 6)
+                {
+                   
+                    Explotion.SetActive(true);
+                    Destroy(car,2f);
+                    SceneManager.LoadScene("Uber");
+                }
         }
     }
+
+   
 }
