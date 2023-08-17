@@ -70,6 +70,11 @@ public class DropPlayer : MonoBehaviour
                //open.Play("Open_door");
                 Destroy(gameObject, 1f);
                 Destroy(Objone, 1.3f);
+
+                Invoke("Drop1", 1.3f);
+               
+
+
                 PlayerPickp.instance.Ignore();
 
 
