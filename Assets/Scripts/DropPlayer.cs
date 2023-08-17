@@ -15,7 +15,7 @@ public class DropPlayer : MonoBehaviour
     public GameObject Objone;
     
    
-    private void Start()
+    public void Start()
     {
         if (Instance == null)
         {
@@ -70,9 +70,10 @@ public class DropPlayer : MonoBehaviour
                //open.Play("Open_door");
                 Destroy(gameObject, 1f);
                 Destroy(Objone, 1.3f);
+                AcceptIgnore.instance.Drop1();
 
-                Invoke("Drop1", 1.3f);
-               
+
+
 
 
                 PlayerPickp.instance.Ignore();
