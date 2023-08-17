@@ -10,6 +10,7 @@ TagManager:
   - PDI
   - Coinexplosion
   - police
+  - HitCount
   layers:
   - Default
   - TransparentFX

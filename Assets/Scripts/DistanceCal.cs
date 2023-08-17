@@ -33,5 +33,8 @@ public class DistanceCal : MonoBehaviour
     {
        
         DistanceValue = Vector3.Distance(Carpoint.transform.position, Endpoint.transform.position);
+
+
+        
     }
 }

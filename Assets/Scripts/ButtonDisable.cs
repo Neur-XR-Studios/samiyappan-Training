@@ -8,6 +8,10 @@ public class ButtonDisable : MonoBehaviour
     public GameObject pickupBtn, DropBtn, Ingnore;
     public string Tagname;
     public bool hit;
+    public GameObject car;
+
+
+    public int Hittingcount;
     public bool Acpet = true;
     private void Start()
     {
@@ -43,5 +47,22 @@ public class ButtonDisable : MonoBehaviour
             Ingnore.SetActive(false);
             DropBtn.SetActive(false);
         }    
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("HitCount"))
+        {
+            Hittingcount++;
+            
+
+            if(Hittingcount >=6)
+            {
+
+                Destroy (car);
+                Debug.Log(Hittingcount);
+            }
+
+        }
     }
 }
