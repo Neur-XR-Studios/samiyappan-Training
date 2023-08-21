@@ -6,7 +6,7 @@ public class MovePoliceCar : MonoBehaviour
 {
     public static MovePoliceCar instance;
   
-   // public Transform toobject;
+  
     public float speed;
     public PlayerWalk walk;
     public GameObject carfind;
@@ -35,13 +35,11 @@ public class MovePoliceCar : MonoBehaviour
     {
         if(other.gameObject.CompareTag("police"))
         {
+            SpawnPolice.instance.ButtonDisable();
             CarControll.Currentbreakforce = 0f; 
            // CarControll.instance.StopWheel();
             CarControll.instance.enabled = false;
-
-          
-            
-
+            CoinCollections.instance.SaveScoreToCSV();
         }
     }
 

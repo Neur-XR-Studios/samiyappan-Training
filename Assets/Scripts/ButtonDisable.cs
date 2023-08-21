@@ -59,15 +59,15 @@ public class ButtonDisable : MonoBehaviour
                 Hittingcount++;
 
 
-                if (Hittingcount >= 6)
-                {
-                   
-                    Explotion.SetActive(true);
-                    Destroy(car,2f);
-                    SceneManager.LoadScene("Uber");
-                }
+            if (Hittingcount >= 6)
+            {
+
+                Explotion.SetActive(true);
+                Destroy(car, 2f);
+                SceneManager.LoadScene("Uber");
+            } 
         }
     }
 
-   
+ 
 }

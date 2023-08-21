@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEditor.Il2Cpp;
 using UnityEngine.UI;
+using System.IO;
+using UnityEngine.Tilemaps;
 
 public class CoinCollections : MonoBehaviour
 {
@@ -15,6 +17,7 @@ public class CoinCollections : MonoBehaviour
     public float maxFuel = 10f;
     public float UseFuel = 1f;
     public float MinValue = 1f;
+    public string Names;
 
 
     private void Start()
@@ -61,10 +64,22 @@ public class CoinCollections : MonoBehaviour
     {
         CurrentFuel = maxFuel;
     }
+    public void SaveScoreToCSV()
+    {
+        string filePath = Application.dataPath + "/scores.csv";        
+        using (StreamWriter writer = File.AppendText(filePath))
+        {
+           
+            writer.WriteLine(Score);
+        }
+       
+      
+        Debug.Log("Score saved to CSV: " + Score);
+    }
 
-  
-    
 
-   
+
+
+
 
 }
