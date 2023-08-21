@@ -138,6 +138,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: HitCount
       objectReference: {fileID: 0}
+    - target: {fileID: 405798, guid: e013b60eb0eec284ba3dce713b6ebf9b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 405798, guid: e013b60eb0eec284ba3dce713b6ebf9b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 461264, guid: e013b60eb0eec284ba3dce713b6ebf9b, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -4872,7 +4880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 433348, guid: a8da0069ca32b8e4c93afdca28905e9f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.37
+      value: 16.3
       objectReference: {fileID: 0}
     - target: {fileID: 433348, guid: a8da0069ca32b8e4c93afdca28905e9f, type: 3}
       propertyPath: m_LocalRotation.w

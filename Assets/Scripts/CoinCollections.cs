@@ -20,6 +20,10 @@ public class CoinCollections : MonoBehaviour
     public string Names;
 
 
+
+
+
+
     private void Start()
     {
         if (instance == null)
@@ -69,17 +73,8 @@ public class CoinCollections : MonoBehaviour
         string filePath = Application.dataPath + "/scores.csv";        
         using (StreamWriter writer = File.AppendText(filePath))
         {
-           
             writer.WriteLine(Score);
         }
-       
-      
         Debug.Log("Score saved to CSV: " + Score);
     }
-
-
-
-
-
-
 }
