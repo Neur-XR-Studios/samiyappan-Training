@@ -64,7 +64,7 @@ public class ButtonDisable : MonoBehaviour
 
                 Explotion.SetActive(true);
                 Destroy(car, 2f);
-                SceneManager.LoadScene("Uber");
+                //SceneManager.LoadScene("Uber");
             } 
         }
     }
