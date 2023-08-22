@@ -11,6 +11,7 @@ public class ButtonDisable : MonoBehaviour
     public bool hit;
     public GameObject car;
     public GameObject Explotion;
+    public GameObject HitExplotion;
 
 
     public int Hittingcount;
@@ -21,6 +22,12 @@ public class ButtonDisable : MonoBehaviour
         pickupBtn.SetActive(false);
         DropBtn.SetActive(false);
         Ingnore.SetActive(false);
+    }
+
+    public IEnumerator LoadUberSceneWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene("CarUber");
     }
     public void Update()
     {
@@ -58,13 +65,14 @@ public class ButtonDisable : MonoBehaviour
         {          
                 Hittingcount++;
 
-
-            if (Hittingcount >= 6)
-            {
-
+            GameObject CoinEX1 = Instantiate(HitExplotion, transform.position, Quaternion.identity);
+            Destroy(CoinEX1, 1f);
+            if (Hittingcount >= 6)           {
+               
                 Explotion.SetActive(true);
-                Destroy(car, 2f);
-                //SceneManager.LoadScene("Uber");
+                SceneManager.LoadScene("CarUber");
+                //Destroy(car, 2f);
+               
             } 
         }
     }
