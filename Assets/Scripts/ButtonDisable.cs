@@ -27,7 +27,7 @@ public class ButtonDisable : MonoBehaviour
     public IEnumerator LoadUberSceneWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene("CarUber");
+        SceneManager.LoadScene("Uber");
     }
     public void Update()
     {
@@ -70,12 +70,14 @@ public class ButtonDisable : MonoBehaviour
             if (Hittingcount >= 6)           {
                
                 Explotion.SetActive(true);
-                SceneManager.LoadScene("CarUber");
+                SpawnPolice.instance.ButtonDisable();
+                // StartCoroutine(LoadUberSceneWithDelay(2f));
+                // SceneManager.LoadScene("Uber");
                 //Destroy(car, 2f);
-               
+
             } 
         }
     }
 
- 
+    
 }

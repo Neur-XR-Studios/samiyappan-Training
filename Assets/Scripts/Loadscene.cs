@@ -30,4 +30,9 @@ public class Loadscene : MonoBehaviour
     {
         SceneManager.LoadScene("yellow");
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
