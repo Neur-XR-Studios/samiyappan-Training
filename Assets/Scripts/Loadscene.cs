@@ -16,10 +16,12 @@ public class Loadscene : MonoBehaviour
     public void Home()
     {
         SceneManager.LoadScene("Uber");
+        CoinCollections.instance.ResetScoreToPrevious();
     }
     public void LV1()
     {
         SceneManager.LoadScene("CarUber");
+        CoinCollections.instance.ResetScoreToPrevious();
     }
     public void LV2()
     {
@@ -34,5 +36,6 @@ public class Loadscene : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+        CoinCollections.instance.ResetScoreToPrevious();
     }
 }

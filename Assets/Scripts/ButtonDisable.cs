@@ -71,6 +71,7 @@ public class ButtonDisable : MonoBehaviour
                
                 Explotion.SetActive(true);
                 SpawnPolice.instance.ButtonDisable();
+              
                 // StartCoroutine(LoadUberSceneWithDelay(2f));
                 // SceneManager.LoadScene("Uber");
                 //Destroy(car, 2f);

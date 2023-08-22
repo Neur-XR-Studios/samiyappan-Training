@@ -18,6 +18,7 @@ public class CoinCollections : MonoBehaviour
     public float UseFuel = 1f;
     public float MinValue = 1f;
     public string Names;
+    private int previousScore;
 
 
 
@@ -30,7 +31,18 @@ public class CoinCollections : MonoBehaviour
         {
             instance = this;
         }
+        previousScore = PlayerPrefs.GetInt("PreviousScore", 0);
+
+        // Update the current score display
+        Score = previousScore;
+        Scorename.text = Score.ToString();
+        
     }
+    public void ResetScoreToPrevious()
+    {
+        PlayerPrefs.SetInt("PreviousScore", Score);
+    }
+
 
     public void Scoreing()
     {

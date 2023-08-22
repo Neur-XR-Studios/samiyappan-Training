@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   carfind: {fileID: 0}
+  explosionPrefab: {fileID: 358637981425055526, guid: 8eb503696b886e04faff8fc0f480d473, type: 3}
 --- !u!65 &989867445657922595
 BoxCollider:
   m_ObjectHideFlags: 0
