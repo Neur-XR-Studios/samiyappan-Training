@@ -9,10 +9,8 @@ public class PoliceArrest : MonoBehaviour
     public float speed;
     private int currentTargetIndex = 0;
     public Animator animator;
-    public Animator Dopen;
-    public GameObject Door;
-    public GameObject Objone;
-
+  
+ 
 
     public void Start()
     {
@@ -20,10 +18,6 @@ public class PoliceArrest : MonoBehaviour
         {
             Instance = this;
         }
-
-        Door = GameObject.Find("door_front_L");
-        Dopen = GameObject.Find("door_front_L").GetComponent<Animator>();
-
         targetWords = new Transform[5];
         targetWords[0] = GameObject.Find("Police1").transform;
         targetWords[1] = GameObject.Find("Police2").transform;
@@ -39,15 +33,7 @@ public class PoliceArrest : MonoBehaviour
      
         DropCustomer();
     }
-    public void OpenDoor()
-    {
-        animator.enabled = true;
-        Dopen.enabled = true;
-        Dopen.Play("Open_door");
-
-    }
-
-
+   
     public void DropCustomer()
     {
         if (targetWords.Length == 0) return;
@@ -62,12 +48,8 @@ public class PoliceArrest : MonoBehaviour
 
             if (currentTargetIndex >= targetWords.Length)
             {
-               
                 enabled = false;
-               
                 SpawnPolice.instance.ButtonDisable();
-
-
             }
         }
     }

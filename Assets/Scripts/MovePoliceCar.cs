@@ -11,11 +11,11 @@ public class MovePoliceCar : MonoBehaviour
 
     public float speed;
     public GameObject carfind;
-    public GameObject explosionPrefab; // Assign the explosion prefab in the Inspector
+    public GameObject explosionPrefab; 
 
-    private bool exploded = false; // To track if the explosion has happened
+    private bool exploded = false; 
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         if (instance == null)
@@ -24,7 +24,7 @@ public class MovePoliceCar : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         carfind = GameObject.Find("PolicePoint");
@@ -33,17 +33,20 @@ public class MovePoliceCar : MonoBehaviour
 
         if (!exploded && Vector3.Distance(transform.position, carfind.transform.position) < 0.1f)
         {
-            ExplodeAndLoadScene();
+           
+             ExplodeAndLoadScene();
+        }
+        else
+        {
+            //
         }
     }
 
     private void ExplodeAndLoadScene()
     {
-        exploded = true;
-        //Instantiate(explosionPrefab, transform.position, Quaternion.identity);      
-        //SceneManager.LoadScene("CarUber");
-        gameObject.GetComponent<PoliceArrest>().enabled = true;
-    }
-    
 
+        gameObject.GetComponent<PoliceArrest>().enabled = true;
+        // exploded = true;
+        //Instantiate(explosionPrefab, transform.position, Quaternion.identity);    
+    }
 }
