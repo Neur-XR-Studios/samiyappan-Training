@@ -51,6 +51,14 @@ public class PoliceArrest : MonoBehaviour
                 enabled = false;
                 SpawnPolice.instance.ButtonDisable();
             }
+            else
+            {
+                //
+            }
+        }
+        else
+        {
+            //
         }
     }
 
