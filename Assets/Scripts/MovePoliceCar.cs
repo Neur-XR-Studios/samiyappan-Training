@@ -7,6 +7,7 @@ public class MovePoliceCar : MonoBehaviour
 {
 
     public static MovePoliceCar instance;
+    public GameObject police;
 
     public float speed;
     public GameObject carfind;
@@ -39,10 +40,9 @@ public class MovePoliceCar : MonoBehaviour
     private void ExplodeAndLoadScene()
     {
         exploded = true;
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-       
-        SpawnPolice.instance.ButtonDisable();
+        //Instantiate(explosionPrefab, transform.position, Quaternion.identity);      
         //SceneManager.LoadScene("CarUber");
+        gameObject.GetComponent<PoliceArrest>().enabled = true;
     }
     
 

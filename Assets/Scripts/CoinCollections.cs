@@ -20,11 +20,6 @@ public class CoinCollections : MonoBehaviour
     public string Names;
     private int previousScore;
 
-
-
-
-
-
     private void Start()
     {
         if (instance == null)
