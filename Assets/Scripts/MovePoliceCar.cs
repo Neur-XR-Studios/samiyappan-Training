@@ -44,7 +44,7 @@ public class MovePoliceCar : MonoBehaviour
 
     private void ExplodeAndLoadScene()
     {
-
+        police.SetActive(true);
         gameObject.GetComponent<PoliceArrest>().enabled = true;
         // exploded = true;
         //Instantiate(explosionPrefab, transform.position, Quaternion.identity);    

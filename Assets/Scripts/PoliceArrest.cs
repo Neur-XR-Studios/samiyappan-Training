@@ -9,6 +9,7 @@ public class PoliceArrest : MonoBehaviour
     public float speed;
     private int currentTargetIndex = 0;
     public Animator animator;
+    public GameObject A1P;
   
  
 
@@ -30,7 +31,7 @@ public class PoliceArrest : MonoBehaviour
 
     void Update()
     {
-     
+        A1P = GameObject.Find("MeshDroping");
         DropCustomer();
     }
    
@@ -49,8 +50,19 @@ public class PoliceArrest : MonoBehaviour
             if (currentTargetIndex >= targetWords.Length)
             {
                 enabled = false;
+                animator.enabled = false;
                 SpawnPolice.instance.ButtonDisable();
+                A1P.GetComponent<SkinnedMeshRenderer>().enabled = true;
+
             }
+            else
+            {
+                //
+            }
+        }
+        else
+        {
+            //
         }
     }
 
