@@ -6,7 +6,7 @@ public class DropPlayer : MonoBehaviour
 {
 
     public static DropPlayer Instance;
-    public Transform[] targetWords; // An array of target positions
+    public Transform[] targetWords; 
     public float speed;
     private int currentTargetIndex = 0;
     public Animator animator;

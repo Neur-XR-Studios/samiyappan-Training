@@ -21,12 +21,7 @@ public class SpawningObj : MonoBehaviour
     // Update is called once per frame
     public void SPawnPlayer()
     {
-
-
         GameObject one = Instantiate(obj,  new Vector3(gameObject.transform.position.x , gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
         one.transform.parent = transform;
-
-
-
     }
 }

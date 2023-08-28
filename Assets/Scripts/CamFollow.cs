@@ -6,12 +6,12 @@ public class CamFollow : MonoBehaviour
 {
 
 
-    public Transform[] followTargets; // An array of follow targets
+    public Transform[] followTargets; 
     public float lookatSpeed;
     public float followSpeed;
     public Vector3 offset;
 
-    private int currentTargetIndex = 0; // Index of the current follow target
+    private int currentTargetIndex = 0; 
 
     private void FixedUpdate()
     {
