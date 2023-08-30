@@ -71,7 +71,7 @@ public class Spawning : MonoBehaviour
                 distance2[j] = distanceObject[i]; 
                 distanceList.Add(distance2[j]);                
                 j++;
-                // Debug.Log(obj);
+                // Debug.Log(SpawnCar);
             }
             //if not take zero , put a if condition eg: distance2 > zero then  distanceWithNozero// print random number using distanceWithNozero array // then print random number 
             i++;

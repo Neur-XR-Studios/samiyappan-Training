@@ -6,8 +6,9 @@ public class CamFollow : MonoBehaviour
 {
 
 
-    public Transform[] followTargets; 
+    public  Transform[] followTargets; 
     public float lookatSpeed;
+    public GameObject followTarget;
     public float followSpeed;
     public Vector3 offset;
 

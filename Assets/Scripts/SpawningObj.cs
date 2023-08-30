@@ -7,8 +7,10 @@ public class SpawningObj : MonoBehaviour
 {
 
     public static SpawningObj instance;
-    public GameObject[] obj;
-    // Start is called before the first frame update
+    public GameObject[] SpawnCar;
+    public int selectedIndex = -1;
+
+   
     void Start()
     {
         if(instance == null)
@@ -17,15 +19,27 @@ public class SpawningObj : MonoBehaviour
         }
       
     }
+  
 
     // Update is called once per frame
     public void SPawnPlayer(int  SelectIndex)
     {
-        if(SelectIndex <0 || SelectIndex >= obj.Length)
+        if(SelectIndex <0 || SelectIndex >= SpawnCar.Length)
         {
             return;
         }
-        GameObject SpawnObjeCt = Instantiate(obj[SelectIndex],  new Vector3(gameObject.transform.position.x , gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
+        selectedIndex = SelectIndex;
+        GameObject SpawnObjeCt = Instantiate(SpawnCar[SelectIndex],  new Vector3(gameObject.transform.position.x , gameObject.transform.position.y, gameObject.transform.position.z), Quaternion.identity);
         SpawnObjeCt.transform.parent = transform;
     }
+
+    public void Respawn()
+    {
+        if(selectedIndex != -1)
+        {
+            Destroy(transform.GetChild(0).gameObject);
+            SPawnPlayer (selectedIndex);
+        }
+    }
+   
 }

@@ -23,6 +23,9 @@ public class DistanceCal : MonoBehaviour
     }   
     void Update()
     {
+        Carpoint = GameObject.Find("Customer");
+        distanceValue = GameObject.Find("Distance");
+        distanceValueText = distanceValue.GetComponent<TMP_Text>();
         int roundedValue = Mathf.RoundToInt(DistanceValue);      
         DistanceCalculation();
         distanceValueText.text = roundedValue.ToString();
