@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtonDisable : MonoBehaviour
 {
-    public GameObject pickupBtn, DropBtn, Ingnore;
+    public GameObject pickupBtn, DropBtn, Ignore;
     public string Tagname;
     public bool hit;
     public GameObject car;
@@ -21,8 +21,11 @@ public class ButtonDisable : MonoBehaviour
     {
         pickupBtn.SetActive(false);
         DropBtn.SetActive(false);
-        Ingnore.SetActive(false);
+        Ignore.SetActive(false);
+
+       
     }
+    
 
     public IEnumerator LoadUberSceneWithDelay(float delay)
     {
@@ -31,6 +34,9 @@ public class ButtonDisable : MonoBehaviour
     }
     public void Update()
     {
+        /*pickupBtn = GameObject.Find("Pickup");
+        DropBtn = GameObject.Find("Drop");
+        Ignore = GameObject.Find("Ignore");*/
         UpdateDistance();
     }
 
@@ -41,20 +47,20 @@ public class ButtonDisable : MonoBehaviour
             if (AcceptIgnore.Accept)
             {
                 pickupBtn.SetActive(false);
-                Ingnore.SetActive(false);
+                Ignore.SetActive(false);
                 DropBtn.SetActive(true);
             }
             else
             {
                 DropBtn.SetActive(false);
                 pickupBtn.SetActive(true);
-                Ingnore.SetActive(true);
+                Ignore.SetActive(true);
             }  
         }
         else 
         {
             pickupBtn.SetActive(false);
-            Ingnore.SetActive(false);
+            Ignore.SetActive(false);
             DropBtn.SetActive(false);
         }    
     }

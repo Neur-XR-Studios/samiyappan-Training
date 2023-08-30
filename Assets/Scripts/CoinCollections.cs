@@ -9,6 +9,7 @@ using UnityEngine.Tilemaps;
 
 public class CoinCollections : MonoBehaviour
 {
+
     public static CoinCollections instance;
     public TMP_Text Scorename;   
     public int Score = 0;  
@@ -75,13 +76,5 @@ public class CoinCollections : MonoBehaviour
     {
         CurrentFuel = maxFuel;
     }
-    public void SaveScoreToCSV()
-    {
-        string filePath = Application.dataPath + "/scores.csv";        
-        using (StreamWriter writer = File.AppendText(filePath))
-        {
-            writer.WriteLine(Score);
-        }
-        Debug.Log("Score saved to CSV: " + Score);
-    }
+   
 }

@@ -8,7 +8,7 @@ public class PlayerWalk : MonoBehaviour
 {
 
     public static PlayerWalk Instance;
-    public Transform[] targetWords; // An array of target positions
+    public Transform[] targetWords; 
     public float speed;
     private int currentTargetIndex = 0;
     public Animator animator;
