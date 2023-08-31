@@ -7697,7 +7697,6 @@ GameObject:
   - component: {fileID: 313310997}
   - component: {fileID: 313310996}
   - component: {fileID: 313310995}
-  - component: {fileID: 313311002}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -7850,25 +7849,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &313311002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 313310993}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe3817c5c4bddab459cf82e525b11840, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followTargets:
-  - {fileID: 1695932075}
-  - {fileID: 696125638}
-  lookatSpeed: 10
-  followTarget: {fileID: 0}
-  followSpeed: 10
-  offset: {x: 0, y: 2.43, z: -4.88}
 --- !u!1 &314885781 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 710dbffe85e069043b2a169d29e3b4ff, type: 3}
@@ -8119,7 +8099,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 313311002}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CamFollow, Assembly-CSharp
         m_MethodName: SwitchTarget
         m_Mode: 3
@@ -8139,6 +8119,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
@@ -9642,7 +9634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6325e20dbd8fae740bb45e20135c6605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawning: {fileID: 3721893027342122934, guid: a879f98850c2def4c9255cf970a4feb8, type: 3}
+  spawning: {fileID: 6521322255412889061, guid: 49aba1c95be2ef445b0e6305572d8857, type: 3}
   isplayer: 0
   directionalArrowl: {fileID: 1589839650}
   Point1:
@@ -10267,6 +10259,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412968526}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &425863147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 425863149}
+  - component: {fileID: 425863148}
+  m_Layer: 0
+  m_Name: ResetScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &425863148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425863147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c1358a034ecd24b9c6bfa6fc91902a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1228543224}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 196535917}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+  SceneName: CarUber
+--- !u!4 &425863149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425863147}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.51800007, y: 0.23529911, z: 4.429}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &435682842
 GameObject:
   m_ObjectHideFlags: 0
@@ -12387,7 +12451,7 @@ GameObject:
   - component: {fileID: 696125637}
   - component: {fileID: 696125636}
   m_Layer: 0
-  m_Name: Car____
+  m_Name: CarTwo
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28554,10 +28618,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1187935103}
-        m_TargetAssemblyTypeName: SpawningObj, Assembly-CSharp
-        m_MethodName: Respawn
+      - m_Target: {fileID: 425863148}
+        m_TargetAssemblyTypeName: CarSelection, Assembly-CSharp
+        m_MethodName: TryAgain
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -35026,13 +35102,14 @@ GameObject:
   - component: {fileID: 1695932075}
   - component: {fileID: 1698764765}
   - component: {fileID: 1698764766}
+  - component: {fileID: 1698764767}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1695583103
 GameObject:
   m_ObjectHideFlags: 0
@@ -35959,7 +36036,7 @@ Transform:
   - {fileID: 1587924237}
   - {fileID: 5106433974490983041}
   m_Father: {fileID: 1866830379}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1695936643
 Transform:
@@ -36918,6 +36995,23 @@ MonoBehaviour:
   CarSpeedvalue: 0
   siren: {fileID: 1587924236}
   PoliceCar: {fileID: 0}
+--- !u!114 &1698764767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695581825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe3817c5c4bddab459cf82e525b11840, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  follow: {fileID: 1695932075}
+  lookatSpeed: 10
+  followSpeed: 10
+  offset: {x: 0, y: 2.43, z: -4.88}
+  cameraHolder: {fileID: 313310994}
 --- !u!82 &1701774115
 AudioSource:
   m_ObjectHideFlags: 0
@@ -39534,7 +39628,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 313311002}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CamFollow, Assembly-CSharp
         m_MethodName: SwitchTarget
         m_Mode: 3
@@ -39550,6 +39644,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: SpawningObj, Assembly-CSharp
         m_MethodName: SPawnPlayer
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -39656,8 +39762,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1695932075}
   - {fileID: 2101292297}
+  - {fileID: 1695932075}
   - {fileID: 696125638}
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -41480,7 +41586,7 @@ Transform:
   - {fileID: 625944918}
   - {fileID: 919018239}
   m_Father: {fileID: 1866830379}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2121949756
 GameObject:

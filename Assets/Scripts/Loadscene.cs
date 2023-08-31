@@ -11,6 +11,7 @@ public class Loadscene : MonoBehaviour
     public Color oldColor = Color.green;
     public Color oldColor2 = Color.blue;
     public Color oldColor3 = Color.yellow;
+    
 
     public static Loadscene instance;
     public void Start()
@@ -51,6 +52,8 @@ public class Loadscene : MonoBehaviour
         Application.Quit();
         CoinCollections.instance.ResetScoreToPrevious();
     }
+
+   
    
     public void Changegreen()
     {
