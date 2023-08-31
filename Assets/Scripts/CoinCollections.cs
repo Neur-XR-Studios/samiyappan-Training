@@ -11,8 +11,8 @@ public class CoinCollections : MonoBehaviour
 {
 
     public static CoinCollections instance;
-    public TMP_Text Scorename;   
-    public int Score = 0;  
+   // public TMP_Text Scorename;   
+   // public int Score = 0;  
     public Slider FuelSlider;
     public float CurrentFuel = 10f;
     public float maxFuel = 10f;
@@ -28,39 +28,44 @@ public class CoinCollections : MonoBehaviour
             instance = this;
         }
         previousScore = PlayerPrefs.GetInt("PreviousScore", 0);
+      //  ScoreManager.instance.SetScore(previousScore);
 
-        // Update the current score display
+      /*  // Update the current score display
         Score = previousScore;
-        Scorename.text = Score.ToString();
+        Scorename.text = Score.ToString();*/
         
     }
     public void ResetScoreToPrevious()
     {
-        PlayerPrefs.SetInt("PreviousScore", Score);
+        ScoreManager.instance.SetScore(previousScore);
+        Debug.Log("Last value Display");
+
     }
 
 
     public void Scoreing()
     {
-        Score = Score + 1;
-        Scorename.text = Score.ToString();
+        ScoreManager.instance.AddScore(1);
+
+      /*  Score = Score + 1;
+        Scorename.text = Score.ToString();*/
     }
 
     public void PickupMoney()
     {
-        Score = Score + 10;
-        Scorename.text = Score.ToString();
+        ScoreManager.instance.AddScore(10);
+
+       /* Score = Score + 10;
+        Scorename.text = Score.ToString();*/
     }
     public void DropMoney() 
     {
-        Score = Score + 20;
-        Scorename.text = Score.ToString();
+        ScoreManager.instance.SubtractScore(10);
+
+      /*  Score = Score + 20;
+        Scorename.text = Score.ToString();*/
     }
-    public void IngnoreMoney()
-    {
-        Score = Score -10;
-        Scorename.text = Score.ToString();
-    }
+   
     public void Fuel()
     {
       CurrentFuel -= UseFuel * Time.deltaTime;

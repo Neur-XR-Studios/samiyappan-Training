@@ -44,7 +44,7 @@ public class CarControll : MonoBehaviour
     public GameObject PoliceCar;
     public void Start()
     {
-        CarSpeed = transform.Find("CarSpeed").GetComponent<TMP_Text>();
+       // CarSpeed = transform.Find("CarSpeed").GetComponent<TMP_Text>();
 
         carObject.GetComponent<Rigidbody>();
         if (instance == null)

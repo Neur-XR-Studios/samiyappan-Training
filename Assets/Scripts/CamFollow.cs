@@ -39,6 +39,4 @@ public class CamFollow : MonoBehaviour
         Vector3 targetPos = follow.position + (follow.forward * offset.z + follow.right * offset.x + follow.up * offset.y);
         cameraHolder.position = Vector3.Lerp(cameraHolder.position, targetPos, followSpeed * Time.deltaTime);
     }
-
-
 }

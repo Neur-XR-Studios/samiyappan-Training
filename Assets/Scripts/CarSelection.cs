@@ -9,26 +9,26 @@ public class CarSelection : MonoBehaviour
     public UnityEvent LoadEvent;
 
     public string SceneName;
-    string value1;
+    string Number;
     void Start()
     {
         
-        value1 = PlayerPrefs.GetString("Value");
-        if (value1 == "Dup")
+        Number = PlayerPrefs.GetString("Numbers");
+        if (Number == "Reset")
         {
             LoadEvent.Invoke();
-            PlayerPrefs.DeleteKey("Value");
+            PlayerPrefs.DeleteKey("Numbers");
 
         }
 
         else
         {
-            //
+            //  no 
         }
     }
     public void TryAgain()
     {
-        PlayerPrefs.SetString("Value", "Dup");
+        PlayerPrefs.SetString("Numbers", "Reset");
 
         SceneManager.LoadScene(SceneName);
 

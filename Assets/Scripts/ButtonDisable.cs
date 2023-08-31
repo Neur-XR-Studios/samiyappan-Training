@@ -34,9 +34,7 @@ public class ButtonDisable : MonoBehaviour
     }
     public void Update()
     {
-        /*pickupBtn = GameObject.Find("Pickup");
-        DropBtn = GameObject.Find("Drop");
-        Ignore = GameObject.Find("Ignore");*/
+     
         UpdateDistance();
     }
 
