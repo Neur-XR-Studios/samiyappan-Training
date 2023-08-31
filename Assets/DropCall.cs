@@ -6,9 +6,7 @@ public class DropCall : MonoBehaviour
 {
     public GameObject myGameObject;
 
-    private void Start()
-    {    
-    }
+    
     private void Update()
     {
         myGameObject = GameObject.Find("DropSpawn");
@@ -19,7 +17,7 @@ public class DropCall : MonoBehaviour
         SpawningObj myComponent = myGameObject.GetComponent<SpawningObj>();
         if (myComponent != null)
         {
-            // Call a function on the component
+           
             myComponent.SPawnPlayer(0);
         }
     }
