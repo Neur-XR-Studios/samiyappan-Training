@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class DropCall : MonoBehaviour
+{
+    public GameObject myGameObject;
+
+    private void Start()
+    {    
+    }
+    private void Update()
+    {
+        myGameObject = GameObject.Find("DropSpawn");
+    }
+    public void D1()
+    {
+
+        SpawningObj myComponent = myGameObject.GetComponent<SpawningObj>();
+        if (myComponent != null)
+        {
+            // Call a function on the component
+            myComponent.SPawnPlayer(0);
+        }
+    }
+}
