@@ -9,8 +9,7 @@ public class SpawningObj : MonoBehaviour
     public static SpawningObj instance;
     public GameObject[] SpawnCar;
     public int selectedIndex = -1;
-   
-
+  
    
     void Start()
     {
@@ -18,7 +17,7 @@ public class SpawningObj : MonoBehaviour
         {
             instance = this;
         }
-      
+     
     }
   
 
