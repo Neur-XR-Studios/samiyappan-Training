@@ -16,7 +16,7 @@ public class ScoreManager : MonoBehaviour
             instance = this;
         }
         previousScore = PlayerPrefs.GetInt("PreviousScore", 0);
-        ScoreManager.instance.SetScore(previousScore);
+        //ScoreManager.instance.SetScore(previousScore);
     }
 
     public int GetScore()
