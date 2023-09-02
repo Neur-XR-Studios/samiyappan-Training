@@ -10,7 +10,10 @@ public class AcceptIgnore : MonoBehaviour
     public PlayerWalk walk;
     public Animator walkWalk;
     public GameObject DropingPoints;
-    public DropPlayer DroppedPlayer;    
+    public DropPlayer DroppedPlayer;
+    
+   
+   
     public static bool Accept = false;
 
 
@@ -20,7 +23,6 @@ public class AcceptIgnore : MonoBehaviour
         {
             instance = this;
         }
-        Accept = false;
     }
     public void Update()
     {
