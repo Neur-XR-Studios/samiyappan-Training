@@ -8,6 +8,7 @@ public class SpawningObj : MonoBehaviour
 
     public static SpawningObj instance;
     public GameObject[] SpawnCar;
+    public GameObject[] SpawnCarsTwo;
     public int selectedIndex = -1;
   
    
@@ -41,5 +42,11 @@ public class SpawningObj : MonoBehaviour
             SPawnPlayer (selectedIndex);
         }
     }
-   
+   public void CarsChange()
+    {
+        for(int i = 0; i < SpawnCar.Length; i++)
+        {
+            SpawnCar[i] = SpawnCarsTwo[i];
+        }
+    }
 }
