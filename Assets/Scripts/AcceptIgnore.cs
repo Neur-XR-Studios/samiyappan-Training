@@ -23,6 +23,7 @@ public class AcceptIgnore : MonoBehaviour
         {
             instance = this;
         }
+        Accept = false;
     }
     public void Update()
     {

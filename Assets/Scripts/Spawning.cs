@@ -13,6 +13,7 @@ public class Spawning : MonoBehaviour
 {
 
     public GameObject spawning;
+    public GameObject spawningtwo;
     public bool isplayer = false;
     public DirectionalArrow directionalArrowl;
     public GameObject[] Point1;
@@ -91,5 +92,9 @@ public class Spawning : MonoBehaviour
     public void DisableMesh()
     {
         skinnedMeshRenderer.enabled = false;
+    }
+    public void ChangePlayer()
+    {
+        spawning = spawningtwo;
     }
 }
