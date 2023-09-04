@@ -8,15 +8,15 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager instance;
     public TMP_Text ScoreText;
     private int score = 0;
-    private int previousScore;
+    //private int previousScore;
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
-        previousScore = PlayerPrefs.GetInt("PreviousScore", 0);
-        //ScoreManager.instance.SetScore(previousScore);
+       // previousScore = PlayerPrefs.GetInt("PreviousScore", 0);
+       // ScoreManager.instance.SetScore(previousScore);
     }
 
     public int GetScore()
@@ -29,17 +29,20 @@ public class ScoreManager : MonoBehaviour
     {
         score = newScore;
         ScoreText.text = score.ToString();
+        PlayerPrefs.SetInt("PreviousScore", score);
     }
 
     public void AddScore(int amount )
     {
         score += amount;
         ScoreText.text = score.ToString();
+        PlayerPrefs.SetInt("PreviousScore", score);
     }
 
     public void SubtractScore(int amount )
     {
         score -= amount;
         ScoreText.text = score.ToString();
+        PlayerPrefs.SetInt("PreviousScore", score);
     }
 }

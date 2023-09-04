@@ -27,8 +27,8 @@ public class CoinCollections : MonoBehaviour
         {
             instance = this;
         }
-        previousScore = PlayerPrefs.GetInt("PreviousScore", 0);
-      //  ScoreManager.instance.SetScore(previousScore);
+        previousScore = PlayerPrefs.GetInt("PreviousScore");
+        ScoreManager.instance.SetScore(previousScore);
 
       /*  // Update the current score display
         Score = previousScore;
@@ -37,7 +37,7 @@ public class CoinCollections : MonoBehaviour
     }
     public void ResetScoreToPrevious()
     {
-        ScoreManager.instance.SetScore(previousScore);
+      //  ScoreManager.instance.SetScore(previousScore);
         Debug.Log("Last value Display");
 
     }
@@ -54,13 +54,14 @@ public class CoinCollections : MonoBehaviour
     public void PickupMoney()
     {
         ScoreManager.instance.AddScore(10);
+       
 
        /* Score = Score + 10;
         Scorename.text = Score.ToString();*/
     }
     public void DropMoney() 
     {
-        ScoreManager.instance.SubtractScore(10);
+        ScoreManager.instance.AddScore(10);
 
       /*  Score = Score + 20;
         Scorename.text = Score.ToString();*/

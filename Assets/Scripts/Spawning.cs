@@ -11,6 +11,7 @@ using Random = UnityEngine.Random;
 
 public class Spawning : MonoBehaviour
 {
+    public static Spawning instance;
 
     public GameObject spawning;
     public GameObject spawningtwo;
@@ -25,11 +26,18 @@ public class Spawning : MonoBehaviour
 
     int i = 0;
     int j = 0;
-
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
     void Start()
     {
+     
         //Spawn();
-        RandomObjects();
+       // RandomObjects();
     }
     private void Update()
     {
@@ -95,6 +103,8 @@ public class Spawning : MonoBehaviour
     }
     public void ChangePlayer()
     {
+     //   RandomObjects();
         spawning = spawningtwo;
+        Debug.Log("ChangePlayer");
     }
 }
