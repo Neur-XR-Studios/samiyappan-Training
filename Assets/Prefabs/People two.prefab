@@ -1763,7 +1763,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378547445315573695}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e6c32474e9c52c44ebde3b22ec972602, type: 2}
   m_CullingMode: 0
@@ -2608,6 +2608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 201087038024127935}
   - component: {fileID: 378547443842708054}
+  - component: {fileID: 104286490}
   m_Layer: 0
   m_Name: WomenCustomerFollow
   m_TagString: Untagged
@@ -2640,7 +2641,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 685030056143965957}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e6c32474e9c52c44ebde3b22ec972602, type: 2}
   m_CullingMode: 0
@@ -2653,6 +2654,24 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &104286490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685030056143965957}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcd537d67864bff46be5a611106e73c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetWords: []
+  speed: 1
+  animator: {fileID: 0}
+  Dopen: {fileID: 0}
+  Door: {fileID: 0}
+  Objone: {fileID: 0}
 --- !u!1 &705831896437016824
 GameObject:
   m_ObjectHideFlags: 0
