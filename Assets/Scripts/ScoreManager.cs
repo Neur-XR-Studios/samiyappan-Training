@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
     public TMP_Text ScoreText;
+    public GameObject   PlayerOBJ;
     private int score = 0;
     //private int previousScore;
     private void Awake()
@@ -15,10 +16,15 @@ public class ScoreManager : MonoBehaviour
         {
             instance = this;
         }
+
+       
        // previousScore = PlayerPrefs.GetInt("PreviousScore", 0);
        // ScoreManager.instance.SetScore(previousScore);
     }
-
+    public void ObjectOne()
+    {
+        PlayerOBJ = GameObject.FindGameObjectWithTag("Player");
+    }
     public int GetScore()
     {
         return score;
@@ -28,21 +34,131 @@ public class ScoreManager : MonoBehaviour
     public void SetScore(int newScore)
     {
         score = newScore;
-        ScoreText.text = score.ToString();
-        PlayerPrefs.SetInt("PreviousScore", score);
+        UpdateScoreUI();
+       // ScoreText.text = score.ToString();
+      
+
+        switch(PlayerOBJ.name)
+        {
+            case "Car(Clone)":
+                PlayerPrefs.SetInt("Car_HighScore", score);
+                break;
+
+            case "CarTwo(Clone)":
+                PlayerPrefs.SetInt("CarTwo_HighScore", score);
+                break;
+
+            case "CarThree(Clone)":
+                PlayerPrefs.SetInt("CarThree_HighScore", score);
+                break;
+
+            case "CarPlayerOne(Clone)":
+                PlayerPrefs.SetInt("CarPlayerOne_HighScore", score);
+                break;
+
+            case "CarPlayerTwo(Clone)":
+                PlayerPrefs.SetInt("CarPlayerTwo_HighScore", score);
+                break;
+
+            case "CarPlayerThree(Clone)":
+                PlayerPrefs.SetInt("CarPlayerThree_HighScore", score);
+                break;
+
+            default:
+                ///
+                break;
+
+
+        }
+
     }
 
     public void AddScore(int amount )
     {
         score += amount;
-        ScoreText.text = score.ToString();
-        PlayerPrefs.SetInt("PreviousScore", score);
+        UpdateScoreUI();
+        // ScoreText.text = score.ToString();
+        switch (PlayerOBJ.name)
+        {
+            case "Car(Clone)":
+                PlayerPrefs.SetInt("Car_HighScore", score);
+
+                Debug.Log("ScoreManager");
+                break;
+
+            case "CarTwo(Clone)":
+                PlayerPrefs.SetInt("CarTwo_HighScore", score);
+                break;
+
+            case "CarThree(Clone)":
+                PlayerPrefs.SetInt("CarThree_HighScore", score);
+                break;
+
+            case "CarPlayerOne(Clone)":
+                PlayerPrefs.SetInt("CarPlayerOne_HighScore", score);
+                break;
+
+            case "CarPlayerTwo(Clone)":
+                PlayerPrefs.SetInt("CarPlayerTwo_HighScore", score);
+                break;
+
+            case "CarPlayerThree(Clone)":
+                PlayerPrefs.SetInt("CarPlayerThree_HighScore", score);
+                break;
+
+            default:
+                ///
+                break;
+
+
+        }
+        //PlayerPrefs.SetInt("PreviousScore", score);
     }
 
     public void SubtractScore(int amount )
     {
         score -= amount;
-        ScoreText.text = score.ToString();
-        PlayerPrefs.SetInt("PreviousScore", score);
+        UpdateScoreUI();
+        switch (PlayerOBJ.name)
+        {
+            case "Car(Clone)":
+                PlayerPrefs.SetInt("Car_HighScore", score);
+                break;
+
+            case "CarTwo(Clone)":
+                PlayerPrefs.SetInt("CarTwo_HighScore", score);
+                break;
+
+            case "CarThree(Clone)":
+                PlayerPrefs.SetInt("CarThree_HighScore", score);
+                break;
+
+            case "CarPlayerOne(Clone)":
+                PlayerPrefs.SetInt("CarPlayerOne_HighScore", score);
+                break;
+
+            case "CarPlayerTwo(Clone)":
+                PlayerPrefs.SetInt("CarPlayerTwo_HighScore", score);
+                break;
+
+            case "CarPlayerThree(Clone)":
+                PlayerPrefs.SetInt("CarPlayerThree_HighScore", score);
+                break;
+
+            default:
+                ///
+                break;
+
+
+        }
+        // ScoreText.text = score.ToString();
+        //PlayerPrefs.SetInt("PreviousScore", score);
+    }
+    private void UpdateScoreUI()
+    {
+        if (ScoreText != null)
+        {
+            ScoreText.text = score.ToString();
+        }
     }
 }

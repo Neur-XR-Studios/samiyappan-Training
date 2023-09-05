@@ -6,6 +6,7 @@ using UnityEditor.Il2Cpp;
 using UnityEngine.UI;
 using System.IO;
 using UnityEngine.Tilemaps;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class CoinCollections : MonoBehaviour
 {
@@ -20,6 +21,9 @@ public class CoinCollections : MonoBehaviour
     public float MinValue = 1f;
     public string Names;
     private int previousScore;
+    public GameObject PlayerOBJ;
+
+
 
     private void Start()
     {
@@ -27,8 +31,48 @@ public class CoinCollections : MonoBehaviour
         {
             instance = this;
         }
-        previousScore = PlayerPrefs.GetInt("PreviousScore");
+
+        PlayerOBJ = GameObject.FindGameObjectWithTag("Player");
+
+
+
+         //   previousScore = PlayerPrefs.GetInt("PreviousScore");
+        switch (PlayerOBJ.name)
+        {
+            case "Car(Clone)":
+                previousScore = PlayerPrefs.GetInt("Car_HighScore");
+
+                Debug.Log("ScoreManager");
+                break;
+
+            case "CarTwo(Clone)":
+                 previousScore = PlayerPrefs.GetInt("CarTwo_HighScore");
+                break;
+
+            case "CarThree(Clone)":
+                previousScore = PlayerPrefs.GetInt("CarThree_HighScore");
+                break;
+
+            case "CarPlayerOne(Clone)":
+                previousScore = PlayerPrefs.GetInt("CarPlayerOne_HighScore");
+                break;
+
+            case "CarPlayerTwo(Clone)":
+                previousScore = PlayerPrefs.GetInt("CarPlayerTwo_HighScore");
+                break;
+
+            case "CarPlayerThree(Clone)":
+                previousScore = PlayerPrefs.GetInt("CarPlayerThree_HighScore");
+                break;
+
+            default:
+                ///
+                break;
+
+
+        }
         ScoreManager.instance.SetScore(previousScore);
+
 
       /*  // Update the current score display
         Score = previousScore;
