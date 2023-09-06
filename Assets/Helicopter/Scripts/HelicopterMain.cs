@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class HelicopterMain : MonoBehaviour
 {
@@ -21,16 +22,23 @@ public class HelicopterMain : MonoBehaviour
             enginePower = value;
         }
     }
-    public float EngineLift = 0.0075f;
+    public float EngineLift = 0.1f;
 
 
 
      void Update()
     {
-        if (Input.GetAxis("Horizontal") >0)
+        if (Input.GetAxis("Height") >0)
         {
             EnginePower += EngineLift;
+            float heightIncreaseSpeed = 1.0f; 
+            transform.position += Vector3.up * heightIncreaseSpeed * Time.deltaTime;
+        }
+        else if(Input.GetAxis("Height") < 0)
+        {
+            EngineLift = 0f;
         }
     }
+     
 
 }

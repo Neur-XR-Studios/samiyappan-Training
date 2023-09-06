@@ -241,6 +241,36 @@ MonoBehaviour:
   MainBlade: {fileID: 474385158}
   SubBlade: {fileID: 761535898}
   EngineLift: 0.0075
+--- !u!136 &180887137
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180887134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.0648763
+  m_Height: 13.873868
+  m_Direction: 2
+  m_Center: {x: -0.5535557, y: -0.520967, z: -2.0410926}
+--- !u!54 &180887138
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 180887134}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &228620601
 GameObject:
   m_ObjectHideFlags: 0
