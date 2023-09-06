@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class BladeRotate : MonoBehaviour
@@ -13,8 +14,22 @@ public class BladeRotate : MonoBehaviour
     }
 
     public Axis rotationaxis;
-    private float bladespeed = 3000;
-    public bool  inversrotation = false;
+    private float bladespeed;
+    public float BladeSpeed
+    {
+        get
+        {
+            return bladespeed;
+        }
+        set
+        {
+            bladespeed = Mathf.Clamp(value, 0, 3000);
+        }
+    }
+
+
+
+    public bool  inversrotation = false; 
     private Vector3 rotation_blade;
     private float rotationdegree;
 
