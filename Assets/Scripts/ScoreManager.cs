@@ -35,13 +35,14 @@ public class ScoreManager : MonoBehaviour
     {
         score = newScore;
         UpdateScoreUI();
-       // ScoreText.text = score.ToString();
-      
+        // ScoreText.text = score.ToString();
 
-        switch(PlayerOBJ.name)
+        switch (PlayerOBJ.name)
         {
             case "Car(Clone)":
                 PlayerPrefs.SetInt("Car_HighScore", score);
+
+                Debug.Log("ScoreManager");
                 break;
 
             case "CarTwo(Clone)":
@@ -53,15 +54,15 @@ public class ScoreManager : MonoBehaviour
                 break;
 
             case "CarPlayerOne(Clone)":
-                PlayerPrefs.SetInt("CarPlayerOne_HighScore", score);
+                PlayerPrefs.SetInt("Car_HighScore", score);
                 break;
 
             case "CarPlayerTwo(Clone)":
-                PlayerPrefs.SetInt("CarPlayerTwo_HighScore", score);
+                PlayerPrefs.SetInt("CarTwo_HighScore", score);
                 break;
 
             case "CarPlayerThree(Clone)":
-                PlayerPrefs.SetInt("CarPlayerThree_HighScore", score);
+                PlayerPrefs.SetInt("CarThree_HighScore", score);
                 break;
 
             default:
@@ -95,15 +96,15 @@ public class ScoreManager : MonoBehaviour
                 break;
 
             case "CarPlayerOne(Clone)":
-                PlayerPrefs.SetInt("CarPlayerOne_HighScore", score);
+                PlayerPrefs.SetInt("Car_HighScore", score);
                 break;
 
             case "CarPlayerTwo(Clone)":
-                PlayerPrefs.SetInt("CarPlayerTwo_HighScore", score);
+                PlayerPrefs.SetInt("CarTwo_HighScore", score);
                 break;
 
             case "CarPlayerThree(Clone)":
-                PlayerPrefs.SetInt("CarPlayerThree_HighScore", score);
+                PlayerPrefs.SetInt("CarThree_HighScore", score);
                 break;
 
             default:
@@ -123,6 +124,8 @@ public class ScoreManager : MonoBehaviour
         {
             case "Car(Clone)":
                 PlayerPrefs.SetInt("Car_HighScore", score);
+
+                Debug.Log("ScoreManager");
                 break;
 
             case "CarTwo(Clone)":
@@ -134,15 +137,15 @@ public class ScoreManager : MonoBehaviour
                 break;
 
             case "CarPlayerOne(Clone)":
-                PlayerPrefs.SetInt("CarPlayerOne_HighScore", score);
+                PlayerPrefs.SetInt("Car_HighScore", score);
                 break;
 
             case "CarPlayerTwo(Clone)":
-                PlayerPrefs.SetInt("CarPlayerTwo_HighScore", score);
+                PlayerPrefs.SetInt("CarTwo_HighScore", score);
                 break;
 
             case "CarPlayerThree(Clone)":
-                PlayerPrefs.SetInt("CarPlayerThree_HighScore", score);
+                PlayerPrefs.SetInt("CarThree_HighScore", score);
                 break;
 
             default:

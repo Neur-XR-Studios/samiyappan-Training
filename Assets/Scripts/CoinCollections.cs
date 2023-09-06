@@ -54,15 +54,15 @@ public class CoinCollections : MonoBehaviour
                 break;
 
             case "CarPlayerOne(Clone)":
-                previousScore = PlayerPrefs.GetInt("CarPlayerOne_HighScore");
+                previousScore = PlayerPrefs.GetInt("Car_HighScore");
                 break;
 
             case "CarPlayerTwo(Clone)":
-                previousScore = PlayerPrefs.GetInt("CarPlayerTwo_HighScore");
+                previousScore = PlayerPrefs.GetInt("CarTwo_HighScore");
                 break;
 
             case "CarPlayerThree(Clone)":
-                previousScore = PlayerPrefs.GetInt("CarPlayerThree_HighScore");
+                previousScore = PlayerPrefs.GetInt("CarThree_HighScore");
                 break;
 
             default:

@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CarUber.unity
+    path: Assets/Scenes/CarGame/CarUber.unity
     guid: 3a1cf41a2a2f8b84bbe4ca4077678f4f
   - enabled: 1
-    path: Assets/Scenes/Uber.unity
+    path: Assets/Scenes/New Folder/Uber.unity
     guid: c3b62b36a217b5f468b0d40c129bd11f
   m_configObjects: {}
