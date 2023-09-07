@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 
 public class HelicopterMain : MonoBehaviour
 {
+    public Rigidbody mainRigidbody;
     public BladeRotate MainBlade;
     public BladeRotate SubBlade;
 
@@ -23,21 +24,44 @@ public class HelicopterMain : MonoBehaviour
         }
     }
     public float EngineLift = 0.1f;
+    public float EngineForwardThrust = 1.0f;
 
+    public void Start()
+    {
+        
+    }
 
-
-     void Update()
+    void Update()
     {
         if (Input.GetAxis("Height") >0)
         {
             EnginePower += EngineLift;
             float heightIncreaseSpeed = 1.0f; 
             transform.position += Vector3.up * heightIncreaseSpeed * Time.deltaTime;
+            mainRigidbody.isKinematic = true;
+            mainRigidbody.useGravity = false;
+
+            if (EngineLift < 1f)
+            {
+                transform.Translate(Vector3.forward * EngineForwardThrust * Time.deltaTime);
+
+            }
         }
-        else if(Input.GetAxis("Height") < 0)
+      
+        else if (Input.GetKeyUp(KeyCode.UpArrow))
         {
-            EngineLift = 0f;
+            mainRigidbody.isKinematic = false;
+            mainRigidbody.useGravity = true;
+            MainBlade.BladeSpeed = 0f;
+            SubBlade.BladeSpeed=0f;
         }
+        else
+        {
+            EnginePower -= EngineLift;
+            float descentSpeed = 1.0f;
+            transform.Translate(Vector3.down * descentSpeed * Time.deltaTime);
+        }
+
     }
      
 
