@@ -10,6 +10,7 @@ public class EnemyFollow : MonoBehaviour
     public int IndexVlaue;
     public string Pointone;
     public string PointTwo;
+    private Transform player;
 
 
 
@@ -18,6 +19,8 @@ public class EnemyFollow : MonoBehaviour
         Enemy_H[0] = GameObject.Find(Pointone).transform;
         Enemy_H[1] = GameObject.Find(PointTwo).transform;
 
+
+        player = GameObject.FindGameObjectWithTag("Player").transform; 
     }
     void Update()
     {
@@ -26,9 +29,12 @@ public class EnemyFollow : MonoBehaviour
             Vector3 targetPosition = Enemy_H[IndexVlaue].position;
             Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
             transform.position = newPosition;
-
+            transform.LookAt(player);
             if(Vector3.Distance(transform.position,targetPosition)< 2f )
             {
+
+
+
                 if (currentTargetIndex >= Enemy_H.Length)
                 {
                     

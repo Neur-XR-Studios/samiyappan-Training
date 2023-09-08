@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 180887140}
   m_Layer: 0
   m_Name: Apache
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -910,7 +910,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!136 &180887137
 CapsuleCollider:
@@ -922,10 +922,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1.0648763
+  m_Radius: 1.1354153
   m_Height: 13.873868
   m_Direction: 2
-  m_Center: {x: -0.5535557, y: -0.520967, z: -2.0410926}
+  m_Center: {x: -0.5535557, y: -0.59150577, z: -2.0410924}
 --- !u!114 &180887136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -940,6 +940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MainBlade: {fileID: 474385158}
   SubBlade: {fileID: 761535898}
+  enginePower: 1
   EngineLift: 0.0075
   EngineForword: 1
 --- !u!114 &180887140
