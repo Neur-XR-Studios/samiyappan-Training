@@ -47,11 +47,14 @@ public class EnemyFollow : MonoBehaviour
        if(other.gameObject.CompareTag("Shoot"))
 
         {
+
+            ScoreValues.Instance.RemoveScore(1);
             Destroy(gameObject);
         }
        else if(other.gameObject.CompareTag("Shoot1"))
 
         {
+            ScoreValues.Instance.RemoveScore(1);
             Destroy(gameObject);
         }
     }

@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class HelicopterMain : MonoBehaviour
 {
     public BladeRotate MainBlade;
     public BladeRotate SubBlade;
+   
 
     public float enginePower;
     public float EnginePower
@@ -23,10 +25,7 @@ public class HelicopterMain : MonoBehaviour
         }
     }
     public float EngineLift = 0.1f;
-    public float EngineForword = 2f;
-
-
-  
+    public float EngineForword = 2f;  
 
     public void Update()
     {
