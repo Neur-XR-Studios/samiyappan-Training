@@ -19,6 +19,8 @@ public GameObject helicopter;
             Destroy(this.gameObject);
 
         }
+        
+
     }
 
 }

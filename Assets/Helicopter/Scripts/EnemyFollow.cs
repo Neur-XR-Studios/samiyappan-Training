@@ -43,6 +43,11 @@ public class EnemyFollow : MonoBehaviour
         {
             Destroy(gameObject);
         }
+       else if(other.gameObject.CompareTag("Shoot1"))
+
+        {
+            Destroy(gameObject);
+        }
     }
 
 }

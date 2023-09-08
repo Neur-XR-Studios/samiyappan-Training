@@ -8,7 +8,7 @@ public class HelicopterMain : MonoBehaviour
     public BladeRotate MainBlade;
     public BladeRotate SubBlade;
 
-    private float enginePower;
+    public float enginePower = 1;
     public float EnginePower
     {
         get
@@ -26,11 +26,15 @@ public class HelicopterMain : MonoBehaviour
     public float EngineForword = 2f;
 
 
+  
 
-    void Update()
+    public void Update()
     {
+       
         if (Input.GetAxis("Height") > 0)
         {
+            enginePower = 1;
+
             EnginePower += EngineLift;
             float heightIncreaseSpeed = 1.0f;
             transform.Translate(Vector3.up * heightIncreaseSpeed * Time.deltaTime);
@@ -43,6 +47,7 @@ public class HelicopterMain : MonoBehaviour
         }
         else
         {
+           
             EnginePower -= EngineLift;
             float downvalue = 1.0f;
             transform.Translate(Vector3.down * downvalue * Time.deltaTime);

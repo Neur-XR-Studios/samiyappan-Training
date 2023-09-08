@@ -12,6 +12,7 @@ TagManager:
   - police
   - HitCount
   - Shoot
+  - Shoot1
   layers:
   - Default
   - TransparentFX
