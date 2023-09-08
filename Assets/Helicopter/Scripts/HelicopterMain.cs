@@ -23,7 +23,7 @@ public class HelicopterMain : MonoBehaviour
         }
     }
     public float EngineLift = 0.1f;
-    public float EngineForword = 1f;
+    public float EngineForword = 2f;
 
 
 

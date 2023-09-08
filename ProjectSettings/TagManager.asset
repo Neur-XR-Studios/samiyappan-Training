@@ -11,6 +11,7 @@ TagManager:
   - Coinexplosion
   - police
   - HitCount
+  - Shoot
   layers:
   - Default
   - TransparentFX
