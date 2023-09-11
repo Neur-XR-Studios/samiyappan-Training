@@ -74,7 +74,7 @@ public class CoinCollections : MonoBehaviour
         ScoreManager.instance.SetScore(previousScore);
 
 
-      /*  // Update the current score display
+      /*  // Update the current score_P display
         Score = previousScore;
         Scorename.text = Score.ToString();*/
         

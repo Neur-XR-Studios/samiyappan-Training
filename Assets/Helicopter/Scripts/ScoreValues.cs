@@ -9,38 +9,35 @@ public class ScoreValues : MonoBehaviour
 {
 
     public static ScoreValues Instance;
-    public int score = 10;
+    public int score_P = 10;
+    public TMP_Text ScoreCount;
     public Slider SliderValue = null;
+  
 
-
-    // Start is called before the first frame update
+  
     void Start()
     {
-
         if (Instance == null)
         {
             Instance = this;
         }
-        SliderValue.value = score;
     }
     public void Update()
     {
-        SliderValue.value = score;
+        ScoreCount.text = score_P.ToString();
+        SliderValue.value = score_P;
     }
-    // Update is called once per frame
+    
     public void AddScore(int amount)
     {
-        score += amount;
-
+        score_P += amount;
     }
     public void RemoveScore(int amount)
     {
-        if (score < 1)
+        if (score_P < 1)
         {
-            score = 1;
+            score_P = 1;
         }
-
-        score -= amount;
-
+        score_P -= amount;
     }
 }

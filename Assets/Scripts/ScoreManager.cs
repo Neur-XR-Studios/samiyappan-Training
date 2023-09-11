@@ -35,7 +35,7 @@ public class ScoreManager : MonoBehaviour
     {
         score = newScore;
         UpdateScoreUI();
-        // ScoreText.text = score.ToString();
+        // ScoreText.text = score_P.ToString();
 
         switch (PlayerOBJ.name)
         {
@@ -78,7 +78,7 @@ public class ScoreManager : MonoBehaviour
     {
         score += amount;
         UpdateScoreUI();
-        // ScoreText.text = score.ToString();
+        // ScoreText.text = score_P.ToString();
         switch (PlayerOBJ.name)
         {
             case "Car(Clone)":
@@ -113,7 +113,7 @@ public class ScoreManager : MonoBehaviour
 
 
         }
-        //PlayerPrefs.SetInt("PreviousScore", score);
+        //PlayerPrefs.SetInt("PreviousScore", score_P);
     }
 
     public void SubtractScore(int amount )
@@ -154,8 +154,8 @@ public class ScoreManager : MonoBehaviour
 
 
         }
-        // ScoreText.text = score.ToString();
-        //PlayerPrefs.SetInt("PreviousScore", score);
+        // ScoreText.text = score_P.ToString();
+        //PlayerPrefs.SetInt("PreviousScore", score_P);
     }
     private void UpdateScoreUI()
     {

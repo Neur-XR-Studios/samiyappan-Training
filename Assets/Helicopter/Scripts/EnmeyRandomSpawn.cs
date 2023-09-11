@@ -14,7 +14,7 @@ public class EnmeyRandomSpawn : MonoBehaviour
         SpawnEnemy.transform.parent = transform;
     }
 
-    public void OnTriggerEnter(Collider other)
+  /*  public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Shoot"))
         {
@@ -23,5 +23,5 @@ public class EnmeyRandomSpawn : MonoBehaviour
         }
 
 
-    }
+    }*/
 }
