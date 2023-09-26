@@ -57,6 +57,18 @@ public class CarControll : MonoBehaviour
     {
        
         CarMove();
+        Carturn();
+    }
+    public void Carturn()
+    {
+
+        Currentmaxt_Angle = Maxt_Angle * Input.GetAxis("Horizontal");
+        {
+
+        }
+
+        FrontR.steerAngle = Currentmaxt_Angle;
+        FrontL.steerAngle = Currentmaxt_Angle;
     }
         
     public void CarMove()
@@ -70,7 +82,7 @@ public class CarControll : MonoBehaviour
             CarSpeedvalue = CarSpeedvalue + (5 * Time.deltaTime);
             CarSpeedmax = (int)(CarSpeedvalue);
             CarSpeed.text = CarSpeedmax.ToString();
-         
+
         }
 
         else
@@ -80,10 +92,11 @@ public class CarControll : MonoBehaviour
                 CarSpeedvalue = CarSpeedvalue - (5 * Time.deltaTime);
                 CarSpeedmax = (int)(CarSpeedvalue);
                 CarSpeed.text = CarSpeedmax.ToString();
-               // StartWheel();
+                // StartWheel();
             }
             else if (CarSpeedvalue > 80)
-            {
+            { 
+                    //
             }
         }
 
@@ -149,13 +162,7 @@ public class CarControll : MonoBehaviour
         BackR.brakeTorque = Currentbreakforce;
         BackL.brakeTorque = Currentbreakforce;
 
-        Currentmaxt_Angle = Maxt_Angle * Input.GetAxis("Horizontal");
-        {
-
-        }
-
-        FrontR.steerAngle = Currentmaxt_Angle;
-        FrontL.steerAngle = Currentmaxt_Angle;
+       
 
         Wheelpos(FrontR, T_FrontR);
         Wheelpos(BackL, T_BackL);
@@ -175,7 +182,7 @@ public class CarControll : MonoBehaviour
         transform.rotation = rotation;
     }
 
-    public void StopWheel()
+  /*  public void StopWheel()
     {
 
         carObject.constraints = RigidbodyConstraints.FreezePosition;     
@@ -186,7 +193,7 @@ public class CarControll : MonoBehaviour
     public void StartWheel()
     {
         carObject.constraints = RigidbodyConstraints.FreezeAll;
-    }
+    }*/
     
 
 }           
